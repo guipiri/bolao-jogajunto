@@ -5,8 +5,8 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div id="navbarup" class="flex-center">
-        <div id="navbarlogo" class="flex-center">
+      <div id="navbarup" className="flex-center">
+        <div id="navbarlogo" className="flex-center">
           <a href="https://jogajunto.net">
             <img
               id="logo"
@@ -16,7 +16,7 @@ function Navbar() {
           </a>
         </div>
       </div>
-      <div class="flex-center navbarlinks">
+      <div className="flex-center navbarlinks">
         <NavLink to="/regras">Regras</NavLink>
         <NavLink to="/palpite">Palpites</NavLink>
         <a className="registrar" href="https://jogajunto.net/">Registrar</a>
