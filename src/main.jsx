@@ -8,6 +8,7 @@ import Palpite from "./routes/palpite/Palpite.jsx";
 
 const router = createBrowserRouter([
   {
+    path: "/",
     element: <App />,
     children: [
       {
