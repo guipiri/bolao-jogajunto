@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const { user } = useContext(UserContext);
+  let username;
+  if (user) {
+    let { username } = user;
+  }
+  console.log(username);
+
   return (
     <nav className="navbar">
       <div id="navbarup" className="flex-center">
@@ -17,18 +24,9 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-        <NavLink to="/regras" className="regrasepalpites">
-          Regras
-        </NavLink>
-        <NavLink to="/palpite" className="regrasepalpites">
-          Palpites
-        </NavLink>
-        <NavLink
-          to="/login"
-          className={({ isActive }) => (isActive ? "login" : "login")}
-        >
-          Entrar
-        </NavLink>
+          <NavLink to="/regras">Regras</NavLink>
+          <NavLink to="/palpite">Palpites</NavLink>
+          <button>Entrar</button>
       </div>
     </nav>
   );
