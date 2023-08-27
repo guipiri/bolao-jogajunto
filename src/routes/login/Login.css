@@ -1,0 +1,42 @@
+.formdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  width: 100%;
+  margin: 5rem;
+}
+
+#form input {
+  height: 1.6rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid grey;
+  border-radius: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+#form input:focus-visible {
+  outline: 1px solid #1568F6;
+}
+
+.entrar {
+  padding: 0.5rem 0rem;
+  background-color: #f3e84e;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  font-size: .9rem;
+  margin-top: 0.5rem;
+}
+
+.entrar:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #a5a5a581;
+  transition: 0.2s;
+}

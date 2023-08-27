@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -17,9 +17,18 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-          <NavLink to="/regras">Regras</NavLink>
-          <NavLink to="/palpite">Palpites</NavLink>
-          <button>Entrar</button>
+        <NavLink to="/regras" className="regrasepalpites">
+          Regras
+        </NavLink>
+        <NavLink to="/palpite" className="regrasepalpites">
+          Palpites
+        </NavLink>
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? "login" : "login")}
+        >
+          Entrar
+        </NavLink>
       </div>
     </nav>
   );

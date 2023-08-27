@@ -26,22 +26,22 @@
   background-color: #0A347B;
 }
 
-nav div a {
+.regrasepalpites {
   color: rgb(209, 209, 209);
 }
 
-.navbarlinks a {
+.regrasepalpites {
   margin: 0 1rem;
   padding-bottom: 0.2rem;
 }
 
-.navbarlinks a:hover {
+.regrasepalpites:hover {
   color: #fff;
   transition: 0.1s;
   border-bottom: 3px solid #f3e84e;
 }
 
-.navbarlinks button {
+.login {
   padding: 0.5rem;
   background-color: #f3e84e;
   border: none;
@@ -51,9 +51,10 @@ nav div a {
   position: absolute;
   right: 0;
   margin-right: 1rem;
+  font-size: .9rem;
 }
 
-.navbarlinks button:hover {
+.login:hover {
   cursor: pointer;
   box-shadow: 1px 1px 5px #ffffff81;
   transition: 0.2s;
