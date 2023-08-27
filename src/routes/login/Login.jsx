@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
 import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [login, setLogin] = useState({});
-  const { user, handleLogin } = useContext(UserContext);
+  const { handleLogin } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const hadleChange = (e) => {
     setLogin({
       ...login,
@@ -30,12 +33,19 @@ function Login() {
         return res.json();
       })
       .then((data) => {
-        handleLogin(data);
+        if (data.hasOwnProperty("username")) {
+          handleLogin(data);
+          navigate("/");
+        } else {
+          alert("Algo de errado com seu login!");
+          e.target.reset();
+        }
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
   return (
     <div className="formdiv">
       <form onChange={hadleChange} onSubmit={handleSubmit} id="form">

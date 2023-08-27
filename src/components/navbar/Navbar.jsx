@@ -9,7 +9,6 @@ function Navbar() {
   if (user) {
     username = user.username;
   }
-  console.log(username);
 
   return (
     <nav className="navbar">
@@ -31,14 +30,10 @@ function Navbar() {
         <NavLink to="/palpite" className="regrasepalpites">
           Palpites
         </NavLink>
-        <span className={username ? "bemvindo" : "none"}>
-          Olá, {username}. Boa sorte!
-        </span>
+        <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <NavLink
           to="/login"
-          className={({ isActive }) =>
-            isActive && username ? "login none" : "login"
-          }
+          className={() => (username ? "login none" : "login")}
         >
           Entrar
         </NavLink>
