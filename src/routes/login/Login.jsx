@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
-import axios from "axios";
+import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [user, setUser] = useState();
   const [login, setLogin] = useState({});
+  const { handleLogin } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const hadleChange = (e) => {
     setLogin({
       ...login,
@@ -30,31 +33,19 @@ function Login() {
         return res.json();
       })
       .then((data) => {
-        localStorage.setItem("USER", JSON.stringify(data));
-        setUser(data);
+        if (data.hasOwnProperty("username")) {
+          handleLogin(data);
+          navigate("/");
+        } else {
+          alert("Algo de errado com seu login!");
+          e.target.reset();
+        }
       })
       .catch((err) => {
         console.log(err);
       });
-
-    // axios({
-    //   url: "https://script.google.com/macros/s/AKfycbxu9UMRXpiOcwO5vUZqf1n2j3EfxgAMlw-d_LD-BSL8qo1beLGXXLZ9Q0AANH_0GQJB/exec",
-    //   method: "post",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     // Authorization:
-    //     // "Bearer ya29.a0AfB_byDQv4uLoWlgUurG4jQXLk5AK4FlIhGzw4tuiBDScUCIxl2-gm-QnuvNJcCTm3g3kCjCGZifkRNsT5iCcB_jiOZ4-tAYHmntVo0m3rcnuvOyTQ3jieBKZS8bz2vLUQ1stnlaHFtZ0rsl3h-uIlGU7z4mKS1GdnNLT4kaCgYKAUgSARASFQHsvYlsOeXTqzaiEYJoFEPSTHbpaA0174",
-    //   },
-    //   data: { ...login, auth_code: null },
-    //   mode: "no-cors",
-    // })
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
+
   return (
     <div className="formdiv">
       <form onChange={hadleChange} onSubmit={handleSubmit} id="form">
