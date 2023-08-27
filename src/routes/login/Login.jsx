@@ -15,12 +15,37 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // fetch("https://sb-vip.ngx.bet/login", {
-    //   method: "POST",
-    //   body: JSON.stringify({ ...login, auth_code: null }),
+    fetch(
+      "https://script.google.com/macros/s/AKfycbxdulvX2FKuZ3o5JTY7dIULcooVV8Bo4T8gFDer16N3vMzT8_Ml5LZanQbcrt-VSBqF/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({ ...login, auth_code: null }),
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        redirect: "follow",
+      }
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        localStorage.setItem("USER", JSON.stringify(data));
+        setUser(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // axios({
+    //   url: "https://script.google.com/macros/s/AKfycbxu9UMRXpiOcwO5vUZqf1n2j3EfxgAMlw-d_LD-BSL8qo1beLGXXLZ9Q0AANH_0GQJB/exec",
+    //   method: "post",
     //   headers: {
     //     "Content-Type": "application/json",
+    //     // Authorization:
+    //     // "Bearer ya29.a0AfB_byDQv4uLoWlgUurG4jQXLk5AK4FlIhGzw4tuiBDScUCIxl2-gm-QnuvNJcCTm3g3kCjCGZifkRNsT5iCcB_jiOZ4-tAYHmntVo0m3rcnuvOyTQ3jieBKZS8bz2vLUQ1stnlaHFtZ0rsl3h-uIlGU7z4mKS1GdnNLT4kaCgYKAUgSARASFQHsvYlsOeXTqzaiEYJoFEPSTHbpaA0174",
     //   },
+    //   data: { ...login, auth_code: null },
     //   mode: "no-cors",
     // })
     //   .then((res) => {
@@ -29,21 +54,6 @@ function Login() {
     //   .catch((err) => {
     //     console.log(err);
     //   });
-
-    axios({
-      url: "https://sb-vip.ngx.bet/login",
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: { ...login, auth_code: null },
-    })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
   return (
     <div className="formdiv">
