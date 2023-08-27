@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 
 function Navbar() {
+  const { user } = useContext(UserContext);
+  let username;
+  if (user) {
+    let { username } = user;
+  }
+  console.log(username);
+
   return (
     <nav className="navbar">
       <div id="navbarup" className="flex-center">
@@ -17,9 +25,9 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-          <NavLink to="/regras">Regras</NavLink>
-          <NavLink to="/palpite">Palpites</NavLink>
-          <button>Entrar</button>
+        <NavLink to="/regras">Regras</NavLink>
+        <NavLink to="/palpite">Palpites</NavLink>
+        <button>Entrar</button>
       </div>
     </nav>
   );
