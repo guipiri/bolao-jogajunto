@@ -9,6 +9,7 @@ function Navbar() {
   if (user) {
     username = user.username;
   }
+  console.log(username);
 
   return (
     <nav className="navbar">
@@ -24,13 +25,13 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
+        <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <NavLink to="/regras" className="regrasepalpites">
           Regras
         </NavLink>
         <NavLink to="/palpite" className="regrasepalpites">
           Palpites
         </NavLink>
-        <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <NavLink
           to="/login"
           className={() => (username ? "login none" : "login")}

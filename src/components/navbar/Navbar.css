@@ -80,6 +80,7 @@
   font-size: 0.8rem;
   position: absolute;
   left: 0;
+  width: min-content;
   margin-left: 0.25rem;
 }
 
