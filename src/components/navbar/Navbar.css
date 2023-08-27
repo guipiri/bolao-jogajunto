@@ -1,0 +1,76 @@
+.navbar {
+  height: 110px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#navbarup {
+  height: 60px;
+  background-color: #1568f6;
+}
+
+#navbarlogo {
+  width: 160px;
+  height: 100%;
+  border-bottom: 4px solid #f3e84e;
+  margin-bottom: 4px;
+}
+
+#navbarlogo a {
+  margin-top: 10px;
+}
+
+.navbarlinks {
+  height: 50px;
+  background-color: #0A347B;
+}
+
+.regrasepalpites {
+  color: rgb(209, 209, 209);
+}
+
+.regrasepalpites {
+  margin: 0 1rem;
+  padding-bottom: 0.2rem;
+}
+
+.regrasepalpites:hover {
+  color: #fff;
+  transition: 0.1s;
+  border-bottom: 3px solid #f3e84e;
+}
+
+.login {
+  padding: 0.5rem;
+  background-color: #f3e84e;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+  font-size: .9rem;
+}
+
+.login:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px #ffffff81;
+  transition: 0.2s;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  height: 48px;
+}
+
+.active {
+  color: #fff;
+  border-bottom: 3px solid #f3e84e;
+}
