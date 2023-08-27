@@ -74,3 +74,12 @@
   color: #fff;
   border-bottom: 3px solid #f3e84e;
 }
+
+.bemvindo {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.none {
+  display: none;
+}
