@@ -12,9 +12,13 @@ function App() {
     localStorage.removeItem("USER");
     setUser(null);
   };
+  const handleLogin = (user) => {
+    localStorage.setItem("USER", JSON.stringify(user));
+    setUser(user);
+  };
   return (
     <>
-      <UserContext.Provider value={{ user, setUser, handleLogout }}>
+      <UserContext.Provider value={{ user, handleLogin, handleLogout }}>
         <Navbar />
         <Outlet />
         <Footer />
