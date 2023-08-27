@@ -17,10 +17,9 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-        <NavLink to="/regras">Regras</NavLink>
-        <NavLink to="/palpite">Palpites</NavLink>
-        <a className="registrar" href="https://jogajunto.net/">Registrar</a>
-        <button>Entrar</button>
+          <NavLink to="/regras">Regras</NavLink>
+          <NavLink to="/palpite">Palpites</NavLink>
+          <button>Entrar</button>
       </div>
     </nav>
   );

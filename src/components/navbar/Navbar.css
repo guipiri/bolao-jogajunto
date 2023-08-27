@@ -42,12 +42,15 @@ nav div a {
 }
 
 .navbarlinks button {
-  padding: 0.4rem;
+  padding: 0.5rem;
   background-color: #f3e84e;
   border: none;
   color: black;
   font-weight: bold;
   border-radius: 0.25rem;
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
 }
 
 .navbarlinks button:hover {
