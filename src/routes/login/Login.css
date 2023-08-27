@@ -24,6 +24,17 @@
   outline: 1px solid #1568F6;
 }
 
+#form span {
+  font-size: 12px;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+#form span a {
+  font-weight: bold;
+  color: #1568F6;
+}
+
 .entrar {
   padding: 0.5rem 0rem;
   background-color: #f3e84e;
