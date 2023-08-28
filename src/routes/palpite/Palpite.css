@@ -1,0 +1,17 @@
+.palpite {
+  min-height: calc(100vh - 221px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.palpitesDesc {
+  width: 100%;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 .6rem;
+}

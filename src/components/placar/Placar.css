@@ -1,0 +1,50 @@
+.placar {
+  height: 10rem;
+  background-color: #c9c9c9;
+  width: 100%;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0.6rem;
+  user-select: none;
+}
+
+.placar span {
+  font-weight: bold;
+}
+
+.teamCircle {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamCircle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color:rgb(1, 104, 1);
+}
+
+.modifyScore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.modifyScore svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #0A347B;
+}
+
+.modifyScore svg:hover {
+  cursor: pointer;
+  
+}

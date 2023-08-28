@@ -56,6 +56,10 @@ function Login() {
         <button className="entrar" type="submit">
           Entrar
         </button>
+        <span>
+          Ainda não tem uma conta Joga Junto?
+          <a href="https://www.jogajunto.net/create-user"> Cadastre-se.</a>
+        </span>
       </form>
     </div>
   );
