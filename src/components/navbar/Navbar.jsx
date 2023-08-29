@@ -9,7 +9,6 @@ function Navbar() {
   if (user) {
     username = user.username;
   }
-  console.log(username);
 
   return (
     <nav className="navbar">

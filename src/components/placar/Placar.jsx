@@ -3,9 +3,12 @@ import "./Placar.css";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { BiSolidTShirt } from "react-icons/bi";
 
-function Placar() {
-  const [score, setScore] = useState({ A: 0, B: 0 });
+function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
+  const [score, setScore] = useState({ A: arrayScore[0], B: arrayScore[1] });
+
+
   const plusOne = (team) => {
+    if (!isChangeable) return;
     if (team === "A") {
       setScore({ ...score, A: score.A + 1 });
     } else {
@@ -13,6 +16,7 @@ function Placar() {
     }
   };
   const minusOne = (team) => {
+    if (!isChangeable) return;
     if (team === "A") {
       if (score.A != 0) {
         setScore({ ...score, A: score.A - 1 });
@@ -29,7 +33,7 @@ function Placar() {
         <div className="teamCircle">
           <BiSolidTShirt />
         </div>
-        <span>Time A</span>
+        <span>{aTeamName}</span>
         <div className="modifyScore">
           <AiOutlineMinusCircle onClick={() => minusOne("A")} />
           <AiOutlinePlusCircle onClick={() => plusOne("A")} />
@@ -42,7 +46,7 @@ function Placar() {
         <div className="teamCircle">
           <BiSolidTShirt />
         </div>
-        <span>Time B</span>
+        <span>{bTeamName}</span>
         <div className="modifyScore">
           <AiOutlineMinusCircle onClick={() => minusOne("B")} />
           <AiOutlinePlusCircle onClick={() => plusOne("B")} />
