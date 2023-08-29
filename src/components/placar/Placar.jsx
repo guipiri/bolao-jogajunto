@@ -11,7 +11,7 @@ function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
     if (team === "A") {
       setScore({ ...score, A: Math.round(score.A) + 1 });
     } else {
-      setScore({ ...score, B: score.B + 1 });
+      setScore({ ...score, B: Math.round(score.B) + 1 });
     }
   };
   const minusOne = (team) => {
