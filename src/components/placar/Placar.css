@@ -93,3 +93,7 @@ input[type=number] {
   cursor: pointer;
   
 }
+
+.notChangeable {
+  display: none;
+}

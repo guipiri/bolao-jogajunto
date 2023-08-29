@@ -3,42 +3,47 @@ import "./Placar.css";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { BiSolidTShirt } from "react-icons/bi";
 
-function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
-  const [score, setScore] = useState({ A: arrayScore[0], B: arrayScore[1] });
-
+function Placar({
+  scores,
+  setScores,
+  index,
+  aTeamName,
+  bTeamName,
+  isChangeable,
+}) {
   const plusOne = (team) => {
     if (!isChangeable) return;
-    if (team === "A") {
-      setScore({ ...score, A: Math.round(score.A) + 1 });
-    } else {
-      setScore({ ...score, B: Math.round(score.B) + 1 });
-    }
+    const newScores = [...scores];
+    newScores[index][team] = Math.round(newScores[index][team]) + 1;
+    setScores([...newScores]);
   };
+
   const minusOne = (team) => {
     if (!isChangeable) return;
-    if (team === "A") {
-      if (score.A != 0) {
-        setScore({ ...score, A: score.A - 1 });
-      }
-    } else {
-      if (score.B != 0) {
-        setScore({ ...score, B: score.B - 1 });
-      }
-    }
+    if (scores[index][team] <= 0) return;
+    const newScores = [...scores];
+    newScores[index][team] = Math.round(newScores[index][team]) - 1;
+    setScores([...newScores]);
   };
 
   const handleChange = (e) => {
-    if (e.target.id == "A") {
-      setScore({
-        ...score,
-        A: e.target.value == "" ? "" : Math.round(e.target.value),
-      });
-    } else {
-      setScore({
-        ...score,
-        B: e.target.value == "" ? "" : Math.round(e.target.value),
-      });
-    }
+    const newScores = [...scores];
+    newScores[index][e.target.id] = e.target.value;
+    setScores([...newScores]);
+  };
+
+  const handleBlur = () => {
+    const newScores = scores.map((score, i) => {
+      if (i < 10) {
+        return [
+          Math.max(0, Math.round(score[0])),
+          Math.max(0, Math.round(score[1])),
+        ];
+      } else {
+        return score;
+      }
+    });
+    setScores([...newScores]);
   };
   return (
     <div className="placar">
@@ -48,14 +53,34 @@ function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
         </div>
         <span>{aTeamName}</span>
         <div className="modifyScore">
-          <AiOutlineMinusCircle onClick={() => minusOne("A")} />
-          <AiOutlinePlusCircle onClick={() => plusOne("A")} />
+          <AiOutlineMinusCircle
+            className={!isChangeable && "notChangeable"}
+            onClick={() => minusOne(0)}
+          />
+          <AiOutlinePlusCircle
+            className={!isChangeable && "notChangeable"}
+            onClick={() => plusOne(0)}
+          />
         </div>
       </div>
       <div className="teams values">
-        <input onChange={handleChange} type="number" value={score.A} id="A" />
+        <input
+          onBlur={handleBlur}
+          onChange={handleChange}
+          type="number"
+          value={scores[index][0]}
+          id={0}
+          disabled={!isChangeable}
+        />
         <span>-</span>
-        <input onChange={handleChange} type="number" value={score.B} id="B" />
+        <input
+          onBlur={handleBlur}
+          onChange={handleChange}
+          type="number"
+          value={scores[index][1]}
+          id={1}
+          disabled={!isChangeable}
+        />
       </div>
       <div className="teams">
         <div className="teamCircle">
@@ -63,8 +88,14 @@ function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
         </div>
         <span>{bTeamName}</span>
         <div className="modifyScore">
-          <AiOutlineMinusCircle onClick={() => minusOne("B")} />
-          <AiOutlinePlusCircle onClick={() => plusOne("B")} />
+          <AiOutlineMinusCircle
+            className={!isChangeable && "notChangeable"}
+            onClick={() => minusOne(1)}
+          />
+          <AiOutlinePlusCircle
+            className={!isChangeable && "notChangeable"}
+            onClick={() => plusOne(1)}
+          />
         </div>
       </div>
     </div>

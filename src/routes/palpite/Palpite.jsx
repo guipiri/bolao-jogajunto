@@ -16,7 +16,20 @@ function Palpite() {
     ["Corinthians", "Botafogo"],
     ["CAM", "Cuiabá"],
   ];
-  const [scores, setScores] = useState();
+
+  const [isChangeable, setIsChangeable] = useState(false);
+  const [scores, setScores] = useState([
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+  ]);
 
   const { user } = useContext(UserContext);
   let userId;
@@ -25,6 +38,21 @@ function Palpite() {
     userId = user._id;
     ftd_date = user.ftd_date;
   }
+
+  const handleEdit = () => {
+    const nowUnix = Math.round(Date.now() / 1000);
+    const firstMatch = 1695078000;
+    console.log(nowUnix, firstMatch);
+    if (nowUnix > firstMatch) {
+      alert("Palpites fechados! O primeiro confronto já começou!");
+    } else if (!userId) {
+      alert("Faça login para fazer seus palpites");
+    } else if (!ftd_date) {
+      alert("Faça seu primeiro depósito para participar!");
+    } else {
+      setIsChangeable(true);
+    }
+  };
 
   useEffect(() => {
     if (userId) {
@@ -60,36 +88,49 @@ function Palpite() {
     }
   }, []);
 
+  const handleSubmit = () => {
+    console.log(scores);
+  };
   return (
-    <div className="palpite">
-      <div className="palpitesDesc">
-        <h3>Bolão Joga Junto</h3>
-        <p>Rodada semana do consumidor</p>
-        {scores
-          ? scores.map((element, index) => {
-              if (index < 10) {
-                return (
-                  <Placar
-                    key={`partida${index + 1}`}
-                    aTeamName={matches[index][0]}
-                    bTeamName={matches[index][1]}
-                    arrayScore={element}
-                    isChangeable={true}
-                  />
-                );
-              }
-            })
-          : matches.map((element, index) => {
-              return (
-                <Placar
-                  key={`placar${index + 1}`}
-                  aTeamName={element[0]}
-                  bTeamName={element[1]}
-                  arrayScore={[0, 0]}
-                  isChangeable={true}
-                />
-              );
-            })}
+    <div className="flexColumnCenter">
+      <div className="palpites flexColumnCenter">
+        <div className="palpitesHeader">
+          <div>
+            <h3>Bolão Joga Junto</h3>
+            <p>Qual será a pontuação correta?</p>
+          </div>
+          <button
+            className={isChangeable ? "none" : "button"}
+            onClick={handleEdit}
+          >
+            Editar palpites
+          </button>
+        </div>
+        {scores.map((element, index) => {
+          if (index < 10) {
+            return (
+              <Placar
+                key={`partida${index + 1}`}
+                aTeamName={matches[index][0]}
+                bTeamName={matches[index][1]}
+                arrayScore={element}
+                isChangeable={isChangeable}
+                scores={scores}
+                setScores={setScores}
+                index={index}
+              />
+            );
+          }
+        })}
+      </div>
+      <div className="flexColumnCenter divButton">
+        <button
+          onClick={handleSubmit}
+          type="submit"
+          className={!isChangeable ? "none" : "button"}
+        >
+          Enviar palpites
+        </button>
       </div>
     </div>
   );
