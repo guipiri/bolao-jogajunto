@@ -6,11 +6,10 @@ import { BiSolidTShirt } from "react-icons/bi";
 function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
   const [score, setScore] = useState({ A: arrayScore[0], B: arrayScore[1] });
 
-
   const plusOne = (team) => {
     if (!isChangeable) return;
     if (team === "A") {
-      setScore({ ...score, A: score.A + 1 });
+      setScore({ ...score, A: Math.round(score.A) + 1 });
     } else {
       setScore({ ...score, B: score.B + 1 });
     }
@@ -27,9 +26,23 @@ function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
       }
     }
   };
+
+  const handleChange = (e) => {
+    if (e.target.id == "A") {
+      setScore({
+        ...score,
+        A: e.target.value == "" ? "" : Math.round(e.target.value),
+      });
+    } else {
+      setScore({
+        ...score,
+        B: e.target.value == "" ? "" : Math.round(e.target.value),
+      });
+    }
+  };
   return (
     <div className="placar">
-      <div>
+      <div className="teams">
         <div className="teamCircle">
           <BiSolidTShirt />
         </div>
@@ -39,10 +52,12 @@ function Placar({ arrayScore, aTeamName, bTeamName, isChangeable }) {
           <AiOutlinePlusCircle onClick={() => plusOne("A")} />
         </div>
       </div>
-      <h3>
-        {score.A} x {score.B}
-      </h3>
-      <div>
+      <div className="teams values">
+        <input onChange={handleChange} type="number" value={score.A} id="A" />
+        <span>-</span>
+        <input onChange={handleChange} type="number" value={score.B} id="B" />
+      </div>
+      <div className="teams">
         <div className="teamCircle">
           <BiSolidTShirt />
         </div>
