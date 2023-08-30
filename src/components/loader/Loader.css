@@ -4,7 +4,8 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: rgba(128, 128, 128, 0.49);
+  scroll-behavior: unset;
 }
