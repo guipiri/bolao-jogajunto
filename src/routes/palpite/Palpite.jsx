@@ -3,6 +3,7 @@ import "./Palpite.css";
 import Placar from "../../components/placar/Placar";
 import { UserContext } from "../../context/UserContext";
 import Loader from "../../components/loader/Loader";
+import Alert from "../../components/alert/Alert";
 
 function Palpite() {
   const matches = [
@@ -23,6 +24,7 @@ function Palpite() {
 
   const [isChangeable, setIsChangeable] = useState(false);
   const [loaderOn, setLoaderOn] = useState(false);
+  const [alertOn, setAlertOn] = useState(false);
   const [scores, setScores] = useState([
     [0, 0],
     [0, 0],
@@ -170,6 +172,7 @@ function Palpite() {
         </div>
       </div>
       <Loader on={loaderOn} />
+      <Alert on={alertOn} />
     </>
   );
 }

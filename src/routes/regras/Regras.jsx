@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Regras.css";
+import Alert from "../../components/alert/Alert";
 
 function Regras() {
-  return <div style={{ minHeight: "calc(100vh - 221px - 3rem)" }}>Regras</div>;
+  const [alertOn, setAlertOn] = useState(true);
+  return (
+    <>
+      <div>Regras</div>;
+      <Alert on={alertOn} dep={true} />
+    </>
+  );
 }
 
 export default Regras;
