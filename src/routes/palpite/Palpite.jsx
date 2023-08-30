@@ -89,7 +89,25 @@ function Palpite() {
   }, []);
 
   const handleSubmit = () => {
-    console.log(scores);
+    const body = [...scores];
+    body.pop();
+    body.pop();
+    console.log(JSON.stringify(body));
+    // fetch(
+    //   `https://script.google.com/macros/s/AKfycbwojqzBmKfbcsMnw-gJ5H6t3EsJwfj1X-Pp3ok_gEEyY8Qisg109jy6H11wJwl84aw/exec?id=${userId}`,
+    //   {
+    //     method: "POST",
+    //     body: JSON.stringify(scores),
+    //     headers: {
+    //       "Content-Type": "text/plain;charset=utf-8",
+    //     },
+    //     // mode: "no-cors",
+    //     redirect: "follow",
+    //   }
+    // )
+    //   .then((res) => console.log(res))
+    //   .then((data) => console.log(data))
+    //   .catch((err) => console.log(err));
   };
   return (
     <div className="flexColumnCenter">
