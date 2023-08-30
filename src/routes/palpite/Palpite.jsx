@@ -17,6 +17,9 @@ function Palpite() {
     ["CAM", "Cuiabá"],
   ];
 
+  const url =
+    "https://script.google.com/macros/s/AKfycbxFhcy77WfGk3iFhZJsh5Fsqxfq7CLAFuuvsiz-P35XyLi4_CArOq0IeR4T2AZLhaI/exec";
+
   const [isChangeable, setIsChangeable] = useState(false);
   const [scores, setScores] = useState([
     [0, 0],
@@ -29,6 +32,8 @@ function Palpite() {
     [0, 0],
     [0, 0],
     [0, 0],
+    undefined,
+    undefined,
   ]);
 
   const { user } = useContext(UserContext);
@@ -42,7 +47,6 @@ function Palpite() {
   const handleEdit = () => {
     const nowUnix = Math.round(Date.now() / 1000);
     const firstMatch = 1695078000;
-    console.log(nowUnix, firstMatch);
     if (nowUnix > firstMatch) {
       alert("Palpites fechados! O primeiro confronto já começou!");
     } else if (!userId) {
@@ -56,16 +60,13 @@ function Palpite() {
 
   useEffect(() => {
     if (userId) {
-      fetch(
-        `https://script.google.com/macros/s/AKfycbx0OWPEcmTJYq6I5DWIYOE2XezV4emJV6-rQ6x_p9BUExDCLcHl6BMNfyjh3oFoYL4/exec?id=${userId}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8",
-          },
-          redirect: "follow",
-        }
-      )
+      fetch(`${url}?id=${userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        redirect: "follow",
+      })
         .then((res) => {
           return res.json();
         })
@@ -92,20 +93,19 @@ function Palpite() {
     const body = [...scores];
     body.pop();
     body.pop();
-    console.log(JSON.stringify(body));
-    fetch(
-      `https://script.google.com/macros/s/AKfycbzbRxlvRfi17mKVqxJceu02yUg-AIVdmoz-0LavsaWKTnuaAycITVtV7kRp1Fiau4eo/exec?id=${userId}`,
-      {
-        method: "POST",
-        body: JSON.stringify(scores),
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8",
-        },
-        // mode: "no-cors",
-        redirect: "follow",
-      }
-    )
-      .then((res) => console.log(res))
+    fetch(`${url}?id=${userId}`, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      // mode: "no-cors",
+      redirect: "follow",
+    })
+      .then((res) => {
+        setIsChangeable(false);
+        return res.json();
+      })
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
   };
@@ -124,13 +124,13 @@ function Palpite() {
             Editar palpites
           </button>
         </div>
-        {scores.map((element, index) => {
+        {matches.map((element, index) => {
           if (index < 10) {
             return (
               <Placar
                 key={`partida${index + 1}`}
-                aTeamName={matches[index][0]}
-                bTeamName={matches[index][1]}
+                aTeamName={element[0]}
+                bTeamName={element[1]}
                 arrayScore={element}
                 isChangeable={isChangeable}
                 scores={scores}
@@ -147,7 +147,13 @@ function Palpite() {
           type="submit"
           className={!isChangeable ? "none" : "button"}
         >
-          Enviar palpites
+          Enviar
+        </button>
+        <button
+          className={isChangeable ? "none" : "button above"}
+          onClick={handleEdit}
+        >
+          Editar palpites
         </button>
       </div>
     </div>
