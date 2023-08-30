@@ -19,7 +19,7 @@ function Login() {
     e.preventDefault();
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbxdulvX2FKuZ3o5JTY7dIULcooVV8Bo4T8gFDer16N3vMzT8_Ml5LZanQbcrt-VSBqF/exec",
+      "https://script.google.com/macros/s/AKfycbwoLx3bRQ7uPnZhI6mb1k-9MkxhmANmIvPPxNCArmzbDo1cKI56VPGtPHoZP5__N-3l/exec",
       {
         method: "POST",
         body: JSON.stringify({ ...login, auth_code: null }),
