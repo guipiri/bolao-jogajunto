@@ -42,6 +42,7 @@ function Login() {
         }
       })
       .catch((err) => {
+        alert("Algo de errado com seu login!");
         console.log(err);
       });
   };
