@@ -9,7 +9,7 @@
   flex-direction: column;
   max-width: 20rem;
   width: 100%;
-  margin: 2rem;
+  margin: 2rem .5rem;
 }
 
 #form input {

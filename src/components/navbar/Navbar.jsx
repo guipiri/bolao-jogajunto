@@ -13,6 +13,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div id="navbarup" className="flex-center">
+        <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <div id="navbarlogo" className="flex-center">
           <a href="https://jogajunto.net">
             <img
@@ -24,7 +25,6 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-        <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <NavLink to="/regras" className="regrasepalpites">
           Regras
         </NavLink>

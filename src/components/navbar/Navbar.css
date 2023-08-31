@@ -86,6 +86,16 @@
   margin-left: 0.25rem;
 }
 
+@media (max-width: 370px) {
+  .login {
+    position:inherit ;
+  }
+
+  .navbarlinks {
+    justify-content: space-around;
+  }
+}
+
 .none {
   display: none;
 }
