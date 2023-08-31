@@ -74,7 +74,6 @@ function Palpite() {
       });
       setAlertOn(true);
     } else if (!ftd_date) {
-      console.log(ftd_date);
       setAlertConfig({
         ...alertConfig,
         text: "Faça seu primeiro depósito para participar!",
