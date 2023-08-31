@@ -4,7 +4,6 @@ import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import Alert from "../../components/alert/Alert";
-import axios from "axios";
 
 function Login() {
   const [login, setLogin] = useState({});
@@ -13,7 +12,7 @@ function Login() {
   const [alertOn, setAlertOn] = useState(false);
   const [alertConfig, setAlertConfig] = useState({
     text: "",
-    error: false,
+    type: "",
     dep: false,
     effect: null,
   });
@@ -41,10 +40,7 @@ function Login() {
         redirect: "follow",
       }
     )
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data.hasOwnProperty("username")) {
           // Seting config data to UserContext
@@ -52,6 +48,7 @@ function Login() {
           // Configuration of login success alert
           setAlertConfig({
             text: "Seu login foi efetuado com sucesso!",
+            type: "success",
             effect: () => navigate("/palpite"),
           });
           // Activation of login success alert
@@ -60,7 +57,7 @@ function Login() {
           // Configuration of login success alert
           setAlertConfig({
             text: "Algo de errado com o seu login!",
-            error: true,
+            type: "error",
           });
           // Activation of login success alert
           setAlertOn(true);
@@ -71,7 +68,7 @@ function Login() {
         // Configuration of login error alert
         setAlertConfig({
           text: "Algo de errado com o seu login! Confira sua senha e nome de usuário.",
-          error: true,
+          type: "error",
         });
         // Activation of login error alert
         setAlertOn(true);
@@ -104,12 +101,12 @@ function Login() {
         <Alert
           setAlertOn={setAlertOn}
           text={alertConfig.text}
-          error={alertConfig.error}
+          type={alertConfig.type}
           dep={alertConfig.dep}
           effect={alertConfig.effect}
         />
       )}
-      {loaderOn && <Loader on={loaderOn} />}
+      {loaderOn && <Loader />}
     </>
   );
 }

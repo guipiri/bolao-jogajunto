@@ -24,7 +24,6 @@ function Palpite() {
 
   const [isChangeable, setIsChangeable] = useState(false);
   const [loaderOn, setLoaderOn] = useState(false);
-  const [alertOn, setAlertOn] = useState(false);
   const [scores, setScores] = useState([
     [0, 0],
     [0, 0],
@@ -39,6 +38,13 @@ function Palpite() {
     undefined,
     undefined,
   ]);
+  const [alertOn, setAlertOn] = useState(false);
+  const [alertConfig, setAlertConfig] = useState({
+    text: "",
+    type: "",
+    dep: false,
+    effect: null,
+  });
 
   const { user } = useContext(UserContext);
   let userId;
@@ -52,11 +58,30 @@ function Palpite() {
     const nowUnix = Math.round(Date.now() / 1000);
     const firstMatch = 1695078000;
     if (nowUnix > firstMatch) {
-      alert("Palpites fechados! O primeiro confronto já começou!");
+      setAlertConfig({
+        ...alertConfig,
+        text: "Palpites fechados pois o primeiro confronto já começou!",
+        type: "warning",
+        dep: false,
+      });
+      setAlertOn(true);
     } else if (!userId) {
-      alert("Faça login para fazer seus palpites");
+      setAlertConfig({
+        ...alertConfig,
+        text: "Faça login para fazer seus palpites",
+        type: "warning",
+        dep: false,
+      });
+      setAlertOn(true);
     } else if (!ftd_date) {
-      alert("Faça seu primeiro depósito para participar!");
+      console.log(ftd_date);
+      setAlertConfig({
+        ...alertConfig,
+        text: "Faça seu primeiro depósito para participar!",
+        type: "warning",
+        dep: true,
+      });
+      setAlertOn(true);
     } else {
       setIsChangeable(true);
     }
@@ -172,7 +197,15 @@ function Palpite() {
         </div>
       </div>
       {/* <Loader on={loaderOn} /> */}
-      {/* <Alert on={alertOn} /> */}
+      {alertOn && (
+        <Alert
+          setAlertOn={setAlertOn}
+          text={alertConfig.text}
+          type={alertConfig.type}
+          dep={alertConfig.dep}
+          effect={alertConfig.effect}
+        />
+      )}
     </>
   );
 }

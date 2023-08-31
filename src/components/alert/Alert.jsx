@@ -2,26 +2,31 @@ import React, { useEffect } from "react";
 import "./Alert.css";
 import { BiErrorCircle, BiCheckCircle } from "react-icons/bi";
 
-function Alert({ text, setAlertOn, error, dep, effect }) {
+function Alert({ text, setAlertOn, type, dep, effect }) {
   function handleClose() {
-    setAlertOn(false);
+    effect ? effect() : setAlertOn(false);
   }
 
   useEffect(() => {
-    console.log("oi");
     setTimeout(() => {
       effect ? effect() : setAlertOn(false);
-    }, 5000);
+    }, 4000);
   }, []);
 
   return (
     <div className="alertConteiner">
       <div className="alert">
         <span onClick={handleClose}>X</span>
-        {error && <BiErrorCircle className="error" />}
-        {!error && <BiCheckCircle className="success" />}
+        {type == "error" && <BiErrorCircle className="error" />}
+        {type == "warning" && <BiErrorCircle className="warning" />}
+        {type == "success" && <BiCheckCircle className="success" />}
         <p>{text}</p>
-        <button className={dep ? "depButton" : "none"}>Depositar</button>
+        <a
+          href="https://www.jogajunto.net/deposit?modal=open"
+          className={dep ? "depButton" : "none"}
+        >
+          Depositar
+        </a>
       </div>
     </div>
   );

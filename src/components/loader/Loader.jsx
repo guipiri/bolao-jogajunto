@@ -2,7 +2,7 @@ import React from "react";
 import "./Loader.css";
 import { TailSpin } from "react-loader-spinner";
 
-function Loader({ on }) {
+function Loader() {
   return (
     <TailSpin
       height="80"
@@ -12,7 +12,7 @@ function Loader({ on }) {
       radius="0"
       wrapperStyle={{}}
       wrapperClass="loaderConteiner"
-      visible={on}
+      visible={true}
     />
   );
 }

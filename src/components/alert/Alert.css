@@ -26,11 +26,8 @@
 }
 
 .alert p {
-  /* text-align: center; */
   margin: 0.5rem 1rem;
   font-size: .9rem;
-  /* max-width: 90%; */
-  /* font-weight: bold; */
 }
 
 .alert span{
@@ -57,6 +54,10 @@
 
 .success {
   color: #069c33;
+}
+
+.warning {
+  color: #d9cb00;
 }
 
 .depButton {
