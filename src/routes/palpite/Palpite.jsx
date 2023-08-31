@@ -196,7 +196,6 @@ function Palpite() {
           </button>
         </div>
       </div>
-      {/* <Loader on={loaderOn} /> */}
       {alertOn && (
         <Alert
           setAlertOn={setAlertOn}
@@ -206,6 +205,7 @@ function Palpite() {
           effect={alertConfig.effect}
         />
       )}
+      {loaderOn && <Loader />}
     </>
   );
 }

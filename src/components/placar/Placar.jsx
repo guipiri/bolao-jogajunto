@@ -28,7 +28,7 @@ function Placar({
 
   const handleChange = (e) => {
     const newScores = [...scores];
-    newScores[index][e.target.id] = e.target.value;
+    newScores[index][e.target.className] = e.target.value;
     setScores([...newScores]);
   };
 
@@ -69,7 +69,8 @@ function Placar({
           onChange={handleChange}
           type="number"
           value={scores[index][0]}
-          id={0}
+          className="0"
+          name={aTeamName}
           disabled={!isChangeable}
         />
         <span>-</span>
@@ -78,7 +79,8 @@ function Placar({
           onChange={handleChange}
           type="number"
           value={scores[index][1]}
-          id={1}
+          className="1"
+          name={bTeamName}
           disabled={!isChangeable}
         />
       </div>
