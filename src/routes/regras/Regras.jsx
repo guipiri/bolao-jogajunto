@@ -7,7 +7,7 @@ function Regras() {
   return (
     <>
       <div>Regras</div>;
-      <Alert on={alertOn} dep={true} />
+      <Alert alertOn={alertOn} dep={true} setAlertOn={setAlertOn} />
     </>
   );
 }

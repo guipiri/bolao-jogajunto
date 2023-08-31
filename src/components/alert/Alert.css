@@ -14,7 +14,7 @@
   max-width: 400px;
   width: 100%;
   background-color: #fff;
-  height: 80px;
+  min-height: 80px;
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -27,8 +27,9 @@
 
 .alert p {
   /* text-align: center; */
-  margin-left: 1rem;
+  margin: 0.5rem 1rem;
   font-size: .9rem;
+  /* max-width: 90%; */
   /* font-weight: bold; */
 }
 
@@ -36,7 +37,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  margin: .1rem .3rem;
+  margin: .2rem .4rem;
+  font-weight:bold;
 }
 
 .alert span:hover{
