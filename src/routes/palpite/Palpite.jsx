@@ -141,8 +141,22 @@ function Palpite() {
         setIsChangeable(false);
         return res.json();
       })
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err))
+      .then((data) => {
+        setAlertConfig({
+          text: "Palpiter enviados com sucesso!",
+          type: "success",
+          dep: false,
+        });
+        setAlertOn(true);
+      })
+      .catch((err) => {
+        setAlertConfig({
+          text: "Os seus palpites não foram enviados! Tente novamente mais tarde.",
+          type: "error",
+          dep: false,
+        });
+        setAlertOn(true);
+      })
       .finally(() => {
         setLoaderOn(false);
       });
