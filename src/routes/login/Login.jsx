@@ -3,11 +3,20 @@ import "./Login.css";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
+import Alert from "../../components/alert/Alert";
+import axios from "axios";
 
 function Login() {
   const [login, setLogin] = useState({});
   const [loaderOn, setLoaderOn] = useState(false);
   const { handleLogin } = useContext(UserContext);
+  const [alertOn, setAlertOn] = useState(false);
+  const [alertConfig, setAlertConfig] = useState({
+    text: "",
+    error: false,
+    dep: false,
+    effect: null,
+  });
   const navigate = useNavigate();
 
   const hadleChange = (e) => {
@@ -17,6 +26,7 @@ function Login() {
       password: e.target.form[1].value,
     });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoaderOn(true);
@@ -32,20 +42,41 @@ function Login() {
       }
     )
       .then((res) => {
+        console.log(res);
         return res.json();
       })
       .then((data) => {
         if (data.hasOwnProperty("username")) {
+          // Seting config data to UserContext
           handleLogin(data);
-          navigate("/");
+          // Configuration of login success alert
+          setAlertConfig({
+            text: "Seu login foi efetuado com sucesso!",
+            effect: () => navigate("/palpite"),
+          });
+          // Activation of login success alert
+          setAlertOn(true);
         } else {
-          alert("Algo de errado com seu login!");
+          // Configuration of login success alert
+          setAlertConfig({
+            text: "Algo de errado com o seu login!",
+            error: true,
+          });
+          // Activation of login success alert
+          setAlertOn(true);
           e.target.reset();
         }
       })
       .catch((err) => {
-        alert(`Algo de errado com seu login: ${err}`);
+        // Configuration of login error alert
+        setAlertConfig({
+          text: "Algo de errado com o seu login! Confira sua senha e nome de usuário.",
+          error: true,
+        });
+        // Activation of login error alert
+        setAlertOn(true);
         console.log(err);
+        e.target.reset();
       })
       .finally(() => {
         setLoaderOn(false);
@@ -69,7 +100,16 @@ function Login() {
           </span>
         </form>
       </div>
-      <Loader on={loaderOn} />
+      {alertOn && (
+        <Alert
+          setAlertOn={setAlertOn}
+          text={alertConfig.text}
+          error={alertConfig.error}
+          dep={alertConfig.dep}
+          effect={alertConfig.effect}
+        />
+      )}
+      {loaderOn && <Loader on={loaderOn} />}
     </>
   );
 }

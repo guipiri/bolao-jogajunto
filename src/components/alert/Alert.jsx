@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Alert.css";
-import { BiErrorCircle } from "react-icons/bi";
+import { BiErrorCircle, BiCheckCircle } from "react-icons/bi";
 
-function Alert({ alertOn, setAlertOn, dep }) {
+function Alert({ text, setAlertOn, error, dep, effect }) {
   function handleClose() {
     setAlertOn(false);
   }
+
+  useEffect(() => {
+    console.log("oi");
+    setTimeout(() => {
+      effect ? effect() : setAlertOn(false);
+    }, 5000);
+  }, []);
+
   return (
-    <div className={alertOn ? "alertConteiner" : "none"}>
+    <div className="alertConteiner">
       <div className="alert">
         <span onClick={handleClose}>X</span>
-        <BiErrorCircle />
-        <p>Ops! Você ainda não fez um depósito!</p>
+        {error && <BiErrorCircle className="error" />}
+        {!error && <BiCheckCircle className="success" />}
+        <p>{text}</p>
         <button className={dep ? "depButton" : "none"}>Depositar</button>
       </div>
     </div>

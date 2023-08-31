@@ -171,8 +171,8 @@ function Palpite() {
           </button>
         </div>
       </div>
-      <Loader on={loaderOn} />
-      <Alert on={alertOn} />
+      {/* <Loader on={loaderOn} /> */}
+      {/* <Alert on={alertOn} /> */}
     </>
   );
 }
