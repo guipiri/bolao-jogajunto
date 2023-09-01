@@ -42,6 +42,7 @@ footer span {
 
 .footerButtons a {
   margin: 0 0.5rem;
+  color: #fff;
 }
 
 .footerLogoButtons {
@@ -64,7 +65,7 @@ footer span {
       margin-bottom: 0;
       height: 10rem;
       justify-content: space-between;
-      min-width: 10rem;
+      min-width: 9rem;
     }
 
     .footerLogoButtons {

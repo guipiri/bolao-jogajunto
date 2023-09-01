@@ -30,11 +30,17 @@ function Footer() {
         </div>
         <div className="footerLogoButtons">
           <div className="footerButtons">
-            <a>Central de Ajuda</a>
-            <a>Termos de Uso</a>
-            <a>Política de Privacidade</a>
-            <a>Blog Joga Junto</a>
-            <a>Aprende Junto</a>
+            <a href="https://ajuda.jogajunto.net/support/home">
+              Central de Ajuda
+            </a>
+            <a href="https://afiliados.jogajunto.net/wp-content/uploads/2023/07/termsconditions.pdf">
+              Termos de Uso
+            </a>
+            <a href="https://afiliados.jogajunto.net/wp-content/uploads/2023/07/politicadeprivacidade.pdf">
+              Política de Privacidade
+            </a>
+            <a href="https://www.blog.jogajunto.net/">Blog Joga Junto</a>
+            <a href="https://aprendejunto.com.br/">Aprende Junto</a>
           </div>
           <div className="flex-center footerLogo">
             <img className="logo" src={logo} />
