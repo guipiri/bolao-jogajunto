@@ -7,16 +7,16 @@ import Alert from "../../components/alert/Alert";
 
 function Palpite() {
   const matches = [
-    ["Bahia", "Santos"],
-    ["Vasco", "CFC"],
-    ["América", "Bragantino"],
-    ["Goias", "Flamengo"],
-    ["Fluminense", "Cruzeiro"],
-    ["São Paulo", "Fortaleza"],
-    ["CAP", "Internacional"],
-    ["Grêmio", "Palmeiras"],
-    ["Corinthians", "Botafogo"],
-    ["CAM", "Cuiabá"],
+    ["BAH", "SAN", "SEG 18/09/2023 - ITAIPAVA ARENA FORTE FONTE NOVA - 20:00"],
+    ["VAS", "CFC", "TER 19/09/2023 - SÃO JANUARIO - 19:00"],
+    ["AME", "RBB", "TER 19/09/2023 - INDEPENDÊNCIA - 21:30"],
+    ["GOI", "FLA", "QUA 20/09/2023 - HAILÉ PINHEIRO (SERRINHA) - 19:00"],
+    ["FLU", "CRU", "QUA 20/09/2023 - MARACANÃ - 21:30"],
+    ["SAO", "FOR", "QUA 20/09/2023 - MORUMBI - 21:30"],
+    ["CAP", "INT", "QUI 21/09/2023 - LIGGA ARENA - 19:30"],
+    ["GRE", "PAL", "QUI 21/09/2023 - ARENA DO GRÊMIO - 21:30"],
+    ["COR", "BOT", "SEX 22/09/2023 - NEO QUÍMICA ARENA - 20:00"],
+    ["CAM", "CUI", "SÁB 23/09/2023 - ARENA RMV - 21:00"],
   ];
 
   const url =
@@ -162,12 +162,12 @@ function Palpite() {
   };
   return (
     <>
-      <div className="flexColumnCenter">
+      <div className="flexColumnCenter pagePalpites">
+        <h3>Bolão Joga Junto</h3>
         <div className="palpites flexColumnCenter">
           <div className="palpitesHeader">
             <div>
-              <h3>Bolão Joga Junto</h3>
-              <p>Qual será a pontuação correta?</p>
+              <p>Campeonato Brasileiro - Séria A - 24ª rodada </p>
             </div>
             <button
               className={isChangeable ? "none" : "button"}
@@ -176,22 +176,25 @@ function Palpite() {
               Editar palpites
             </button>
           </div>
-          {matches.map((element, index) => {
-            if (index < 10) {
-              return (
-                <Placar
-                  key={`partida${index + 1}`}
-                  aTeamName={element[0]}
-                  bTeamName={element[1]}
-                  arrayScore={element}
-                  isChangeable={isChangeable}
-                  scores={scores}
-                  setScores={setScores}
-                  index={index}
-                />
-              );
-            }
-          })}
+          <div className="flexColumnCenter placaresDiv">
+            {matches.map((element, index) => {
+              if (index < 10) {
+                return (
+                  <Placar
+                    key={`partida${index + 1}`}
+                    aTeamName={element[0]}
+                    bTeamName={element[1]}
+                    arrayScore={element}
+                    isChangeable={isChangeable}
+                    scores={scores}
+                    setScores={setScores}
+                    index={index}
+                    description={matches[index][2]}
+                  />
+                );
+              }
+            })}
+          </div>
         </div>
         <div className="flexColumnCenter divButton">
           <button

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Placar.css";
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { BiSolidTShirt } from "react-icons/bi";
 
 function Placar({
@@ -10,6 +9,7 @@ function Placar({
   aTeamName,
   bTeamName,
   isChangeable,
+  description,
 }) {
   const plusOne = (team) => {
     if (!isChangeable) return;
@@ -46,58 +46,69 @@ function Placar({
     setScores([...newScores]);
   };
   return (
-    <div className="placar">
-      <div className="teams">
-        <div className="teamCircle">
-          <BiSolidTShirt />
+    <div className="placarDiv">
+      <p>{description}</p>
+      <div className="placar">
+        <div className="teams">
+          <div className="teamCircle">
+            <img src={`src/assets/${aTeamName}.svg`} />
+          </div>
+          <span>{aTeamName}</span>
+          <div className="modifyScore">
+            <span
+              className={!isChangeable && "notChangeable"}
+              onClick={() => minusOne(0)}
+            >
+              -
+            </span>
+            <span
+              className={!isChangeable && "notChangeable"}
+              onClick={() => plusOne(0)}
+            >
+              +
+            </span>
+          </div>
         </div>
-        <span>{aTeamName}</span>
-        <div className="modifyScore">
-          <AiOutlineMinusCircle
-            className={!isChangeable && "notChangeable"}
-            onClick={() => minusOne(0)}
+        <div className="teams values">
+          <input
+            onBlur={handleBlur}
+            onChange={handleChange}
+            type="number"
+            value={scores[index][0]}
+            className="0"
+            name={aTeamName}
+            disabled={!isChangeable}
           />
-          <AiOutlinePlusCircle
-            className={!isChangeable && "notChangeable"}
-            onClick={() => plusOne(0)}
+          <span>x</span>
+          <input
+            onBlur={handleBlur}
+            onChange={handleChange}
+            type="number"
+            value={scores[index][1]}
+            className="1"
+            name={bTeamName}
+            disabled={!isChangeable}
           />
         </div>
-      </div>
-      <div className="teams values">
-        <input
-          onBlur={handleBlur}
-          onChange={handleChange}
-          type="number"
-          value={scores[index][0]}
-          className="0"
-          name={aTeamName}
-          disabled={!isChangeable}
-        />
-        <span>-</span>
-        <input
-          onBlur={handleBlur}
-          onChange={handleChange}
-          type="number"
-          value={scores[index][1]}
-          className="1"
-          name={bTeamName}
-          disabled={!isChangeable}
-        />
-      </div>
-      <div className="teams">
-        <div className="teamCircle">
-          <BiSolidTShirt />
-        </div>
-        <span>{bTeamName}</span>
-        <div className="modifyScore">
-          <AiOutlineMinusCircle
-            className={!isChangeable && "notChangeable"}
-            onClick={() => minusOne(1)}
-          />
-          <AiOutlinePlusCircle
-            className={!isChangeable && "notChangeable"}
-            onClick={() => plusOne(1)}
-          />
+        <div className="teams">
+          <div className="teamCircle">
+            <img src={`src/assets/${bTeamName}.svg`} />
+          </div>
+          <span>{bTeamName}</span>
+          <div className="modifyScore">
+            <span
+              className={!isChangeable && "notChangeable"}
+              onClick={() => minusOne(1)}
+            >
+              -
+            </span>
+            <span
+              className={!isChangeable && "notChangeable"}
+              onClick={() => plusOne(1)}
+            >
+              +
+            </span>
+          </div>
         </div>
       </div>
     </div>
