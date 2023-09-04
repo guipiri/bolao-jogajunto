@@ -10,6 +10,8 @@ function Placar({
   bTeamName,
   isChangeable,
   description,
+  aSrcImg,
+  bSrcImg,
 }) {
   const plusOne = (team) => {
     if (!isChangeable) return;
@@ -51,7 +53,7 @@ function Placar({
       <div className="placar">
         <div className="teams">
           <div className="teamCircle">
-            <img src={`src/assets/${aTeamName}.svg`} />
+            <img src={aSrcImg} />
           </div>
           <span>{aTeamName}</span>
           <div className="modifyScore">
@@ -92,7 +94,7 @@ function Placar({
         </div>
         <div className="teams">
           <div className="teamCircle">
-            <img src={`src/assets/${bTeamName}.svg`} />
+            <img src={bSrcImg} />
           </div>
           <span>{bTeamName}</span>
           <div className="modifyScore">
