@@ -26,7 +26,7 @@ function Navbar() {
       </div>
       <div className="flex-center navbarlinks">
         <NavLink to="/regras" className="regrasepalpites">
-          Regras
+          Como Jogar
         </NavLink>
         <NavLink to="/palpite" className="regrasepalpites">
           Palpites
