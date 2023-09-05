@@ -1,0 +1,51 @@
+.regras {
+  background-color: #f5f5f5;
+  color: #666666;
+  line-height: 1.5rem;
+  padding: 1rem 2rem;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regras p {
+  margin: 1rem 0;
+}
+
+.regrasDiv {
+  max-width: 50rem;
+}
+
+.regrasDiv ol {
+  padding: revert;
+}
+
+.regras h4, .regras h2 {
+  color: #002151;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.regras h4 {
+  margin: 1rem 0;
+}
+
+.regras h2 {
+  text-align: center;
+}
+
+.regrasDiv table, .regrasDiv td {
+  border: 1px solid #666;
+  align-self: center;
+}
+
+.regrasDiv td {
+  padding: .3rem 1rem;
+}
+
+.divTable {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

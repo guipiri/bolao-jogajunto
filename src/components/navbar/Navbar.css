@@ -52,6 +52,8 @@
   right: 0;
   margin-right: 1rem;
   font-size: .9rem;
+  width: 5rem;
+  text-align: center;
 }
 
 .login:hover {
@@ -73,4 +75,27 @@
 .active {
   color: #fff;
   border-bottom: 3px solid #f3e84e;
+}
+
+.bemvindo {
+  color: #fff;
+  font-size: 0.8rem;
+  position: absolute;
+  left: 0;
+  width: min-content;
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 420px) {
+  .login {
+    position:inherit ;
+  }
+
+  .navbarlinks {
+    justify-content: space-around;
+  }
+}
+
+.none {
+  display: none;
 }
