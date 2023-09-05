@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import Alert from "../../components/alert/Alert";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 function Login() {
   const [login, setLogin] = useState({});
@@ -88,6 +89,29 @@ function Login() {
           <input autoComplete="true" type="text" id="username" required />
           <label htmlFor="password">Senha</label>
           <input type="password" id="password" required />
+          <AiFillEye
+            id="visibleEye"
+            onClick={(e) => {
+              const inpuPassword = document.getElementById("password");
+              const invisibleEye = document.getElementById("invisibleEye");
+              const visibleEye = document.getElementById("visibleEye");
+              inpuPassword.attributes.type.value = "text";
+              invisibleEye.classList.toggle("none");
+              visibleEye.classList.toggle("none");
+            }}
+          />
+          <AiFillEyeInvisible
+            id="invisibleEye"
+            className="none"
+            onClick={(e) => {
+              const inpuPassword = document.getElementById("password");
+              const invisibleEye = document.getElementById("invisibleEye");
+              const visibleEye = document.getElementById("visibleEye");
+              inpuPassword.attributes.type.value = "password";
+              invisibleEye.classList.toggle("none");
+              visibleEye.classList.toggle("none");
+            }}
+          />
           <button className="entrar" type="submit">
             Entrar
           </button>
