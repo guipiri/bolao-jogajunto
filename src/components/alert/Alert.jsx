@@ -8,9 +8,12 @@ function Alert({ text, setAlertOn, type, dep, effect }) {
   }
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeOutId = setTimeout(() => {
       effect ? effect() : setAlertOn(false);
     }, 4000);
+    return () => {
+      clearTimeout(timeOutId);
+    };
   }, []);
 
   return (
