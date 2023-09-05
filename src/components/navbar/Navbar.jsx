@@ -15,7 +15,7 @@ function Navbar() {
       <div id="navbarup" className="flex-center">
         <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <div id="navbarlogo" className="flex-center">
-          <a href="https://jogajunto.net">
+          <a href="https://jogajunto.net" target="_blank">
             <img
               id="logo"
               alt="logo"
@@ -25,7 +25,7 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-        <NavLink to="/regras" className="regrasepalpites">
+        <NavLink to="/" className="regrasepalpites">
           Como Jogar
         </NavLink>
         <NavLink to="/palpite" className="regrasepalpites">
