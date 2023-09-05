@@ -86,7 +86,7 @@
   margin-left: 0.25rem;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 420px) {
   .login {
     position:inherit ;
   }
