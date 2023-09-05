@@ -9,6 +9,15 @@ footer {
   font-size: .8rem;
 }
 
+footer a:hover {
+  color: #fff;
+  transition: .1s;
+}
+
+footer a img:hover {
+  filter: invert(100%) sepia(50%) saturate(50%) hue-rotate(266deg) brightness(1200%) contrast(101%)
+}
+
 .columnDirection {
   flex-direction: column;
 }
@@ -44,7 +53,7 @@ footer span {
 
 .footerButtons a {
   margin: 0 0.5rem;
-  color: #fff;
+  color: #b1b1b1;
 }
 
 .footerLogoButtons {

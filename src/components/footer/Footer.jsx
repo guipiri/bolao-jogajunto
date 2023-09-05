@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../../assets/logo.png";
-import facebook from "../../assets/facebook.svg";
-import instagram from "../../assets/instagram.svg";
-import telegram from "../../assets/telegram.svg";
-import tiktok from "../../assets/tiktok.svg";
-import twitter from "../../assets/twitter.svg";
+import facebook from "../../assets/medias/facebook.svg";
+import instagram from "../../assets/medias/instagram.svg";
+import telegram from "../../assets/medias/telegram.svg";
+import tiktok from "../../assets/medias/tiktok.svg";
+import twitter from "../../assets/medias/twitter.svg";
 
 function Footer() {
   return (
@@ -33,14 +33,24 @@ function Footer() {
             <a href="https://ajuda.jogajunto.net/support/home" target="_blank">
               Central de Ajuda
             </a>
-            <a href="https://afiliados.jogajunto.net/wp-content/uploads/2023/07/termsconditions.pdf" target="_blank">
+            <a
+              href="https://afiliados.jogajunto.net/wp-content/uploads/2023/07/termsconditions.pdf"
+              target="_blank"
+            >
               Termos de Uso
             </a>
-            <a href="https://afiliados.jogajunto.net/wp-content/uploads/2023/07/politicadeprivacidade.pdf" target="_blank">
+            <a
+              href="https://afiliados.jogajunto.net/wp-content/uploads/2023/07/politicadeprivacidade.pdf"
+              target="_blank"
+            >
               Política de Privacidade
             </a>
-            <a href="https://www.blog.jogajunto.net/" target="_blank">Blog Joga Junto</a>
-            <a href="https://aprendejunto.com.br/" target="_blank">Aprende Junto</a>
+            <a href="https://www.blog.jogajunto.net/" target="_blank">
+              Blog Joga Junto
+            </a>
+            <a href="https://aprendejunto.com.br/" target="_blank">
+              Aprende Junto
+            </a>
           </div>
           <div className="flex-center footerLogo">
             <img className="logo" src={logo} />
