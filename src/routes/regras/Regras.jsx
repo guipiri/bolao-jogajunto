@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import "./Regras.css";
+import banner from "../../assets/banner_bolao.png";
+import teste from "../../assets/teste-4x1.png";
 
 function Regras() {
   return (
     <div className="regras">
+      <img
+        className="regrasBanner"
+        src={banner}
+        alt="bolão-joga-junto-desafio-lançado-ganhe-até-10-mil-reais-participe-de-graça"
+      />
       <div className="regrasDiv">
         <h2>Você consegue acertar 6 placares da rodada?</h2>
         <p>
