@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Regras.css";
 import banner from "../../assets/banner_bolao.png";
-import teste from "../../assets/teste-4x1.png";
+import { NavLink } from "react-router-dom";
 
 function Regras() {
   return (
@@ -77,6 +77,9 @@ function Regras() {
         <h4>Termos e condições</h4>
         <p>......</p>
       </div>
+      <NavLink to="/palpite" className="cta">
+        Participe agora!
+      </NavLink>
     </div>
   );
 }
