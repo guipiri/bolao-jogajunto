@@ -24,6 +24,7 @@ import RBB from "../../assets/RBB.svg";
 import SAN from "../../assets/SAN.svg";
 import SAO from "../../assets/SAO.svg";
 import VAS from "../../assets/VAS.svg";
+import campeonato from "../../assets/campeonato.png";
 
 function Palpite() {
   const matches = [
@@ -199,7 +200,7 @@ function Palpite() {
         <div className="palpites flexColumnCenter">
           <div className="palpitesHeader">
             <div>
-              <p>Campeonato Brasileiro - Séria A - 24ª rodada </p>
+              <p><img src={campeonato} alt="logo-do-campeonato-brasileiro" />Campeonato Brasileiro - Séria A - 24ª rodada </p>
             </div>
             <button
               className={isChangeable ? "none" : "button"}
