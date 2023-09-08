@@ -36,9 +36,8 @@
 }
 
 .regrasepalpites:hover {
-  color: #fff;
   transition: 0.1s;
-  border-bottom: 3px solid #f3e84e;
+  color: #F3E84E;
 }
 
 .login {
@@ -73,8 +72,7 @@
 }
 
 .active {
-  color: #fff;
-  border-bottom: 3px solid #f3e84e;
+  color: #F3E84E;
 }
 
 .bemvindo {

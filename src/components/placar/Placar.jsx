@@ -77,7 +77,7 @@ function Placar({
             onChange={handleChange}
             type="number"
             value={scores[index][0]}
-            className="0"
+            className={isChangeable ? "0 inputBackground" : "0"}
             name={aTeamName}
             disabled={!isChangeable}
           />
@@ -87,7 +87,7 @@ function Placar({
             onChange={handleChange}
             type="number"
             value={scores[index][1]}
-            className="1"
+            className={isChangeable ? "1 inputBackground" : "1"}
             name={bTeamName}
             disabled={!isChangeable}
           />
