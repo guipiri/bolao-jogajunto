@@ -81,7 +81,7 @@
   position: absolute;
   left: 0;
   width: min-content;
-  margin-left: 0.25rem;
+  margin-left: 1rem;
 }
 
 @media (max-width: 420px) {
