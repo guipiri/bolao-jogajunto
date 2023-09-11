@@ -75,7 +75,73 @@ function Regras() {
           conseguir e levar o prêmio máximo de 10 mil reais!
         </p>
         <h4>Termos e condições</h4>
-        <p>......</p>
+        <ol className="termsAndConditions">
+          <li>
+            Você é responsável por quaisquer obrigações fiscais (declaração e/ou
+            pagamento de impostos) aplicáveis em sua jurisdição em relação a
+            quaisquer depósitos, apostas ou taxas de entrada ou a quaisquer
+            ganhos/prêmios ou perdas, conforme for aplicável. Os valores de
+            prêmios exibidos não incluem quaisquer deduções fiscais (quando
+            aplicável).
+          </li>
+          <li>
+            O prêmio é pago em reias (BRL) e será pago na conta do cliente no
+            site do Joga Junto.
+          </li>
+          <li>
+            Máximo de uma oferta por cliente. Todas as ofertas aos clientes são
+            limitadas a uma pessoa, família, endereço residencial, IP, endereço
+            e email, número de telefone, mesmo número de conta de pagamento,
+            dispositivo móvel, tablet ou computador partilhado, por exemplo
+            biblioteca pública ou local de trabalho. Reservamos o direito de
+            retirar a disponibilidade de qualquer oferta ou todas as ofertas a
+            qualquer cliente ou grupo de clientes em qualquer momento e em nosso
+            critério exclusivo e absoluto.
+          </li>
+          <li>
+            A Joga Junto se reserva o direito de remover a funcionalidade do
+            Bolão para qualquer cliente ou grupo de clientes, caso existam
+            provas razoáveis para acreditar que o cliente ou grupo de clientes
+            estejam fazendo utilização indevida da funcionalidade.
+          </li>
+          <li>
+            As ofertas se aplicam apenas a clientes que tenham uma conta
+            JogaJunto e que fizeram um depósito em dinheiro real com a Joga
+            Junto.
+          </li>
+          <li>
+            A Joga Junto se reserva o direito de aceitar ou recusar qualquer
+            entrada no Desafio do Bolão.
+          </li>
+          <li>
+            Por questões de Segurança, poderemos solicitar comprovantes de
+            Identificação Válidos, tais como documentos de identidade com foto,
+            passaporte, ou carteira de habilitação para verificar a sua
+            identidade antes de autorizar qualquer retirada da conta Joga Junto
+            referente aos ganhos provenientes do Bolão.
+          </li>
+          <li>
+            O Joga Junto reserva-se no direito de cancelar a participação a
+            qualquer momento de qualquer conta que seja considerada abusiva.
+          </li>
+          <li>
+            A Joga Junto se reserva o direito de alterar, suspender ou remover a
+            funcionalidade do Bolão (ou qualquer parte dela) para qualquer
+            evento, partida ou cliente a qualquer momento;
+          </li>
+          <li>
+            A Joga Junto se reserva o direito de reaver qualquer prêmio em
+            dinheiro atribuído para uma entrada no Bolão se o resultado de uma
+            partida no jogo relevante tiver sido determinada erroneamente.
+          </li>
+          <li>
+            A funcionalidade do Bolão está disponível a critério da Joga Junto e
+            esta não oferece garantias quanto à sua disponibilidade. A Joga
+            Junto não poderá ser responsabilizada se a funcionalidade do Bolão
+            não estiver disponível por motivos técnicos.
+          </li>
+          <li>Termos e Condições Gerais da Joga Junto se aplicam.</li>
+        </ol>
       </div>
       <NavLink to="/palpite" className="cta">
         Participe agora!
