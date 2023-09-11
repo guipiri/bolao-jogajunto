@@ -3,6 +3,12 @@
   margin-bottom: 10rem;
 }
 
+.palpiteHeader {
+  border-radius: 0 0 0.8rem 0.8rem;
+  max-width: 50rem;
+  width: 100%;
+}
+
 .pagePalpites h3 {
   color: #002151;
   margin-top: 2rem;
@@ -16,10 +22,9 @@
 }
 
 .palpites {
-  max-width: 40rem;
+  max-width: 50rem;
   margin-top: 2rem;
-  padding: 0 .6rem;
-}
+  }
 
 .flexColumnCenter {
   display: flex;
@@ -67,7 +72,7 @@
 
 .divButton {
   margin-top: 1.6rem;
-  max-width: 30rem;
+  max-width: 50rem;
   height: 42px;
 }
 

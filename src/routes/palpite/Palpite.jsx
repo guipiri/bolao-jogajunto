@@ -24,7 +24,7 @@ import RBB from "../../assets/RBB.svg";
 import SAN from "../../assets/SAN.svg";
 import SAO from "../../assets/SAO.svg";
 import VAS from "../../assets/VAS.svg";
-import logoBolao from "../../assets/logo-bolao.svg";
+import logoBolao from "../../assets/bolao-palpite-header.png";
 import campeonato from "../../assets/campeonato.png";
 
 function Palpite() {
@@ -197,7 +197,7 @@ function Palpite() {
   return (
     <>
       <div className="flexColumnCenter pagePalpites">
-        <img src={logoBolao} alt="logo-bolao-joga-junto" />
+        <img className="palpiteHeader" src={logoBolao} alt="logo-bolao-joga-junto" />
         <div className="palpites flexColumnCenter">
           <div className="palpitesHeader">
             <div>
