@@ -58,13 +58,13 @@ function Placar({
           <span>{aTeamName}</span>
           <div className="modifyScore">
             <span
-              className={!isChangeable && "notChangeable"}
+              className={!isChangeable ? "notChangeable" : ""}
               onClick={() => minusOne(0)}
             >
               -
             </span>
             <span
-              className={!isChangeable && "notChangeable"}
+              className={!isChangeable ? "notChangeable" : ""}
               onClick={() => plusOne(0)}
             >
               +
@@ -99,13 +99,13 @@ function Placar({
           <span>{bTeamName}</span>
           <div className="modifyScore">
             <span
-              className={!isChangeable && "notChangeable"}
+              className={!isChangeable ? "notChangeable" : ""}
               onClick={() => minusOne(1)}
             >
               -
             </span>
             <span
-              className={!isChangeable && "notChangeable"}
+              className={!isChangeable ? "notChangeable" : ""}
               onClick={() => plusOne(1)}
             >
               +
