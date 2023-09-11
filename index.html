@@ -17,6 +17,31 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      function initFreshChat() {
+        window.fcWidget.init({
+          token: "a38a3a02-173c-4e00-a195-3b540c86c850",
+          host: "https://jogajunto-help.freshchat.com",
+          widgetUuid: "3014ca9f-5b8b-45ab-976f-9481a837defd",
+        });
+      }
+      function initialize(i, t) {
+        var e;
+        i.getElementById(t)
+          ? initFreshChat()
+          : (((e = i.createElement("script")).id = t),
+            (e.async = !0),
+            (e.src = "https://jogajunto-help.freshchat.com/js/widget.js"),
+            (e.onload = initFreshChat),
+            i.head.appendChild(e));
+      }
+      function initiateCall() {
+        initialize(document, "Freshchat-js-sdk");
+      }
+      window.addEventListener
+        ? window.addEventListener("load", initiateCall, !1)
+        : window.attachEvent("load", initiateCall, !1);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
