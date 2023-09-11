@@ -50,19 +50,36 @@
   text-align: center;
 }
 
-.regrasDiv table, .regrasDiv td {
-  border: 1px solid #666;
-  align-self: center;
-}
-
-.regrasDiv td {
-  padding: .3rem 1rem;
-}
-
 .divTable {
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.divTable table {
+  border: 2px solid #002151;;
+  align-self: center;
+  border-radius: .5rem;
+  font-weight: bold;
+  color: #002151;
+}
+
+.divTable table td {
+  border-bottom: 1px solid #002151;
+  border-right: 1px solid #002151;
+  padding: .3rem 1rem;
+}
+
+.divTable tr td:first-child {
+  background-color: rgba(21, 104, 246, 0.08);
+}
+.divTable tr td:last-child {
+  background-color: rgba(243, 232, 78, 0.24);
+  border-right:none ;
+}
+
+.divTable table tr:last-child td {
+  border-bottom: none;
 }
 
 .cta {
