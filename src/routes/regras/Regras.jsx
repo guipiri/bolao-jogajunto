@@ -29,14 +29,14 @@ function Regras() {
           </li>
           <li>Escolha os seus palpites nos 10 jogos disponíveis.</li>
           <li>
-            Assim que você confirmar suas escolhas, um e-mail automático com os
-            seus palpites será enviado para sua caixa de entrada.
+            Assim que você confirmar suas escolhas, é só torcer e aguardar o
+            resultado do bolão que sai no dia 25 de setembro (segunda-feira).
           </li>
         </ol>
         <h4>Premiações</h4>
         <p>
-          Confira na tabela os prêmios em bônus para a quantidade de placares
-          que você acertar!
+          Confira na tabela os prêmios em dinheiro para a quantidade de placares
+          que você cravar!
         </p>
         <div className="divTable">
           <table>
@@ -70,13 +70,18 @@ function Regras() {
         </div>
         <h4>Regras</h4>
         <p>
-          O Bolão da 24 ° rodada do Brasileirão será iniciado no dia 15/09 e
-          estará disponível para palpites até dia 18/09 às 18:00. <br /> Cada
-          cliente que já depositou no site Joga Junto tem direito de dar um
+          O Bolão da 24° rodada do Brasileirão será iniciado no dia 15/09 e
+          estará disponível para palpites até dia 18/09 às 18:00.
+          <br />
+          <br />
+          Cada cliente que já depositou no site Joga Junto tem direito a um
           palpite. Ou seja, você só tem uma chance para cravar quantos placares
           conseguir e levar o prêmio máximo de 10 mil reais!
+          <br />
+          <br />O resultado sai na segunda-feira, dia 25/09/2023 e os bônus
+          serão creditados até terça-feira dia 26/09/2023.
         </p>
-        <h4>Termos e condições</h4>
+        <h4 className="termsAndConditionsTitle">Termos e condições</h4>
         <ol className="termsAndConditions">
           <li>
             Você é responsável por quaisquer obrigações fiscais (declaração e/ou

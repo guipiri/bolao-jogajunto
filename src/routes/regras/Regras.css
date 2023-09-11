@@ -9,8 +9,6 @@
   flex-direction: column;
 }
 
-
-
 .regrasBanner {
   box-shadow: 0 1px 4px #66666682;
   border-radius: 0 0 .8rem .8rem;
@@ -101,6 +99,11 @@
   cursor: pointer;
   box-shadow: 1px 1px 8px #91919181;
   transition: 0.2s;
+}
+
+.termsAndConditionsTitle {
+  font-size: .8rem;
+  text-align: center;
 }
 
 .termsAndConditions {
