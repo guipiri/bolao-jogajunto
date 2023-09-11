@@ -197,7 +197,11 @@ function Palpite() {
   return (
     <>
       <div className="flexColumnCenter pagePalpites">
-        <img className="palpiteHeader" src={logoBolao} alt="logo-bolao-joga-junto" />
+        <img
+          className="palpiteHeader"
+          src={logoBolao}
+          alt="logo-bolao-joga-junto"
+        />
         <div className="palpites flexColumnCenter">
           <div className="palpitesHeader">
             <div>
@@ -236,19 +240,16 @@ function Palpite() {
           </div>
         </div>
         <div className="flexColumnCenter divButton">
-          <button
-            onClick={handleSubmit}
-            type="submit"
-            className={!isChangeable ? "none" : "button"}
-          >
-            Enviar
-          </button>
-          <button
-            className={isChangeable ? "none" : "button above"}
-            onClick={handleEdit}
-          >
-            Editar palpites
-          </button>
+          {isChangeable && (
+            <button onClick={handleSubmit} type="submit" className="button">
+              Enviar
+            </button>
+          )}
+          {!isChangeable && (
+            <button className="button above" onClick={handleEdit}>
+              Editar palpites
+            </button>
+          )}
         </div>
       </div>
       {alertOn && (

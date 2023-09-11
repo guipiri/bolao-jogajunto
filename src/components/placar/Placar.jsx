@@ -30,7 +30,7 @@ function Placar({
 
   const handleChange = (e) => {
     const newScores = [...scores];
-    newScores[index][e.target.className] = e.target.value;
+    newScores[index][e.target.className.split(" ")[0]] = e.target.value;
     setScores([...newScores]);
   };
 

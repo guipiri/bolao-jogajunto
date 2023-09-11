@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import "./Regras.css";
 import banner from "../../assets/banner_bolao.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Regras() {
   return (
     <div className="regras">
-      <img
-        className="regrasBanner"
-        src={banner}
-        alt="bolão-joga-junto-desafio-lançado-ganhe-até-10-mil-reais-participe-de-graça"
-      />
+      <Link to="/palpite">
+        <img
+          className="regrasBanner"
+          src={banner}
+          alt="bolão-joga-junto-desafio-lançado-ganhe-até-10-mil-reais-participe-de-graça"
+        />
+      </Link>
       <div className="regrasDiv">
         <h2>Você consegue acertar 6 placares da rodada?</h2>
         <p>
