@@ -68,6 +68,11 @@ function Regras() {
             </tbody>
           </table>
         </div>
+        <p>
+          A melhor parte é que as premiações serão individuais, o que significa
+          que você receberá o valor TOTAL do prêmio, sem a necessidade de
+          dividi-lo com outros vencedores.
+        </p>
         <h4>Regras</h4>
         <p>
           O Bolão da 24° rodada do Brasileirão será iniciado no dia 15/09 e

@@ -2,6 +2,7 @@ import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
+import Alert from "./components/alert/Alert";
 import { UserContext } from "./context/UserContext";
 import { useEffect, useState } from "react";
 
@@ -14,7 +15,7 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem("USER");
     setUser(null);
-    navigate("/");
+    navigate("/login");
   };
   const handleLogin = (user) => {
     localStorage.setItem("USER", JSON.stringify(user));

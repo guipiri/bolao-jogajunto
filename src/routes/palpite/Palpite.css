@@ -24,7 +24,8 @@
 .palpites {
   max-width: 50rem;
   margin-top: 2rem;
-  }
+  padding: 0 1rem;
+}
 
 .flexColumnCenter {
   display: flex;
@@ -38,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .palpitesHeader p {
@@ -61,7 +62,6 @@
   color: black;
   font-weight: bold;
   border-radius: 0.5rem;
-  font-size: 1rem;
 }
 
 .button:hover {

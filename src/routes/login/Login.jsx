@@ -117,7 +117,10 @@ function Login() {
           </button>
           <span>
             Ainda não tem uma conta Joga Junto?
-            <a href="https://www.jogajunto.net/create-user"> Cadastre-se.</a>
+            <a href="https://www.jogajunto.net/create-user" target="_blank">
+              {" "}
+              Cadastre-se.
+            </a>
           </span>
         </form>
       </div>

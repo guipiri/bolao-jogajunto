@@ -37,7 +37,7 @@ function Palpite() {
       BAH,
       SAN,
     ],
-    ["VAS", "CFC", "TER 19/09/2023 - SÃO JANUARIO - 19:00", VAS, CFC],
+    ["VAS", "CFC", "TER 21/09/2023 - SÃO JANUARIO - 19:00", VAS, CFC],
     ["AME", "RBB", "TER 19/09/2023 - INDEPENDÊNCIA - 21:30", AME, RBB],
     [
       "GOI",
@@ -207,7 +207,7 @@ function Palpite() {
             <div>
               <p>
                 <img src={campeonato} alt="logo-do-campeonato-brasileiro" />
-                Campeonato Brasileiro - Séria A - 24ª rodada{" "}
+                Campeonato Brasileiro - Série A - 24ª rodada{" "}
               </p>
             </div>
             <button
