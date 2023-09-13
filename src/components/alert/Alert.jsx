@@ -27,6 +27,7 @@ function Alert({ text, setAlertOn, type, dep, effect }) {
         <a
           href="https://www.jogajunto.net/deposit?modal=open"
           className={dep ? "depButton" : "none"}
+          target="_blank"
         >
           Depositar
         </a>

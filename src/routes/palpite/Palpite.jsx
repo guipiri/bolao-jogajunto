@@ -26,6 +26,7 @@ import SAO from "../../assets/SAO.svg";
 import VAS from "../../assets/VAS.svg";
 import logoBolao from "../../assets/bolao-palpite-header.png";
 import campeonato from "../../assets/campeonato.png";
+import oldFtdUsers from "../../supportFunctions/oldFtdUsers";
 
 function Palpite() {
   const matches = [
@@ -52,7 +53,6 @@ function Palpite() {
     ["COR", "BOT", "SEX 22/09/2023 - NEO QUÍMICA ARENA - 20:00", COR, BOT],
     ["CAM", "CUI", "SÁB 23/09/2023 - ARENA RMV - 21:00", CAM, CUI],
   ];
-
   const url =
     "https://script.google.com/macros/s/AKfycbxFhcy77WfGk3iFhZJsh5Fsqxfq7CLAFuuvsiz-P35XyLi4_CArOq0IeR4T2AZLhaI/exec";
 
@@ -107,7 +107,7 @@ function Palpite() {
         dep: false,
       });
       setAlertOn(true);
-    } else if (!ftd_date) {
+    } else if (!ftd_date && !oldFtdUsers.includes(userId)) {
       setAlertConfig({
         ...alertConfig,
         text: "Faça seu primeiro depósito para participar!",
