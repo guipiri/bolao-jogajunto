@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import { AffiliateIdContext } from "../../context/AffiliateIdContext";
 
 function Navbar() {
   const { user, handleLogout } = useContext(UserContext);
+  const affiliateId = useContext(AffiliateIdContext);
+
   let username;
   if (user) {
     username = user.username;
@@ -15,7 +18,10 @@ function Navbar() {
       <div id="navbarup" className="flex-center">
         <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <div id="navbarlogo" className="flex-center">
-          <a href="https://jogajunto.net" target="_blank">
+          <a
+            href={`https://www.jogajunto.net/register${affiliateId}`}
+            target="_blank"
+          >
             <img
               id="logo"
               alt="logo"

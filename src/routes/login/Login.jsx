@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import Alert from "../../components/alert/Alert";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { AffiliateIdContext } from "../../context/AffiliateIdContext";
 
 function Login() {
   const [login, setLogin] = useState({});
   const [loaderOn, setLoaderOn] = useState(false);
   const { handleLogin } = useContext(UserContext);
+  const affiliateId = useContext(AffiliateIdContext);
   const [alertOn, setAlertOn] = useState(false);
   const [alertConfig, setAlertConfig] = useState({
     text: "",
@@ -117,7 +119,10 @@ function Login() {
           </button>
           <span>
             Ainda não tem uma conta Joga Junto?
-            <a href="https://www.jogajunto.net/create-user" target="_blank">
+            <a
+              href={`https://www.jogajunto.net/register${affiliateId}`}
+              target="_blank"
+            >
               {" "}
               Cadastre-se.
             </a>
