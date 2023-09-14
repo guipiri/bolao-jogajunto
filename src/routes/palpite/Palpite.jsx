@@ -37,7 +37,6 @@ function Palpite() {
       BAH,
       SAN,
     ],
-    ["VAS", "CFC", "TER 21/09/2023 - SÃO JANUARIO - 19:00", VAS, CFC],
     ["AME", "RBB", "TER 19/09/2023 - INDEPENDÊNCIA - 21:30", AME, RBB],
     [
       "GOI",
@@ -48,6 +47,7 @@ function Palpite() {
     ],
     ["FLU", "CRU", "QUA 20/09/2023 - MARACANÃ - 21:30", FLU, CRU],
     ["SAO", "FOR", "QUA 20/09/2023 - MORUMBI - 21:30", SAO, FOR],
+    ["VAS", "CFC", "QUI 21/09/2023 - SÃO JANUARIO - 19:00", VAS, CFC],
     ["CAP", "INT", "QUI 21/09/2023 - LIGGA ARENA - 19:30", CAP, INT],
     ["GRE", "PAL", "QUI 21/09/2023 - ARENA DO GRÊMIO - 21:30", GRE, PAL],
     ["COR", "BOT", "SEX 22/09/2023 - NEO QUÍMICA ARENA - 20:00", COR, BOT],
