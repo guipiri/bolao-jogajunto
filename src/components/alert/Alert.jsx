@@ -4,12 +4,19 @@ import { BiErrorCircle, BiCheckCircle } from "react-icons/bi";
 
 function Alert({ text, setAlertOn, type, dep, effect }) {
   function handleClose() {
-    effect ? effect() : setAlertOn(false);
+    if (effect) {
+      effect();
+    }
+    setAlertOn(false);
   }
 
   useEffect(() => {
     const timeOutId = setTimeout(() => {
-      effect ? effect() : setAlertOn(false);
+      console.log("entrei");
+      if (effect) {
+        effect();
+      }
+      setAlertOn(false);
     }, 4000);
     return () => {
       clearTimeout(timeOutId);
