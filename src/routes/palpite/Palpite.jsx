@@ -41,10 +41,9 @@ function Palpite() {
 
   const handleEdit = () => {
     const nowUnix = Math.round(Date.now() / 1000);
-    const firstMatch = 1695070800;
+    const firstMatch = 0;
     if (nowUnix > firstMatch) {
       setAlertConfig({
-        ...alertConfig,
         text: "Palpites fechados pois os confrontos já começaram!",
         type: "warning",
         dep: false,
