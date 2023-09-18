@@ -10,7 +10,6 @@ import oldFtdUsers from "../../supportFunctions/oldFtdUsers";
 import matches from "../../supportFunctions/matches";
 
 function Palpite() {
-  
   const url =
     "https://script.google.com/macros/s/AKfycbxFhcy77WfGk3iFhZJsh5Fsqxfq7CLAFuuvsiz-P35XyLi4_CArOq0IeR4T2AZLhaI/exec";
 
@@ -52,7 +51,7 @@ function Palpite() {
     if (nowUnix > firstMatch) {
       setAlertConfig({
         ...alertConfig,
-        text: "Palpites fechados pois o primeiro confronto já começou!",
+        text: "Palpites fechados pois os confrontos já começaram!",
         type: "warning",
         dep: false,
       });
