@@ -8,9 +8,9 @@ import logoBolao from "../../assets/bolao-palpite-header.png";
 import campeonato from "../../assets/campeonato.png";
 import oldFtdUsers from "../../supportFunctions/oldFtdUsers";
 import matches from "../../supportFunctions/matches";
+import { AlertContext } from "../../context/AlertContext";
 
 function Palpite() {
-  
   const url =
     "https://script.google.com/macros/s/AKfycbxFhcy77WfGk3iFhZJsh5Fsqxfq7CLAFuuvsiz-P35XyLi4_CArOq0IeR4T2AZLhaI/exec";
 
@@ -30,14 +30,7 @@ function Palpite() {
     undefined,
     undefined,
   ]);
-  const [alertOn, setAlertOn] = useState(false);
-  const [alertConfig, setAlertConfig] = useState({
-    text: "",
-    type: "",
-    dep: false,
-    effect: null,
-  });
-
+  const { setAlertConfig, setAlertOn } = useContext(AlertContext);
   const { user } = useContext(UserContext);
   let userId;
   let ftd_date;
@@ -51,7 +44,6 @@ function Palpite() {
     const firstMatch = 1695078000;
     if (nowUnix > firstMatch) {
       setAlertConfig({
-        ...alertConfig,
         text: "Palpites fechados pois o primeiro confronto já começou!",
         type: "warning",
         dep: false,
@@ -59,7 +51,6 @@ function Palpite() {
       setAlertOn(true);
     } else if (!userId) {
       setAlertConfig({
-        ...alertConfig,
         text: "Faça login para fazer seus palpites",
         type: "warning",
         dep: false,
@@ -67,7 +58,6 @@ function Palpite() {
       setAlertOn(true);
     } else if (!ftd_date && !oldFtdUsers.includes(userId)) {
       setAlertConfig({
-        ...alertConfig,
         text: "Faça seu primeiro depósito para participar!",
         type: "warning",
         dep: true,
@@ -210,15 +200,6 @@ function Palpite() {
           )}
         </div>
       </div>
-      {alertOn && (
-        <Alert
-          setAlertOn={setAlertOn}
-          text={alertConfig.text}
-          type={alertConfig.type}
-          dep={alertConfig.dep}
-          effect={alertConfig.effect}
-        />
-      )}
       {loaderOn && <Loader />}
     </>
   );

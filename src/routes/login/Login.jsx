@@ -3,22 +3,17 @@ import "./Login.css";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
-import Alert from "../../components/alert/Alert";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { AffiliateIdContext } from "../../context/AffiliateIdContext";
+import { AlertContext } from "../../context/AlertContext";
 
 function Login() {
   const [login, setLogin] = useState({});
   const [loaderOn, setLoaderOn] = useState(false);
   const { handleLogin } = useContext(UserContext);
   const affiliateId = useContext(AffiliateIdContext);
-  const [alertOn, setAlertOn] = useState(false);
-  const [alertConfig, setAlertConfig] = useState({
-    text: "",
-    type: "",
-    dep: false,
-    effect: null,
-  });
+  const { setAlertConfig, setAlertOn } = useContext(AlertContext);
+
   const navigate = useNavigate();
 
   const hadleChange = (e) => {
@@ -54,16 +49,12 @@ function Login() {
             type: "success",
             effect: () => navigate("/palpite"),
           });
-          // Activation of login success alert
-          setAlertOn(true);
         } else {
-          // Configuration of login success alert
+          // Configuration of login error alert
           setAlertConfig({
             text: "Algo de errado com o seu login!",
             type: "error",
           });
-          // Activation of login success alert
-          setAlertOn(true);
           e.target.reset();
         }
       })
@@ -79,6 +70,8 @@ function Login() {
         e.target.reset();
       })
       .finally(() => {
+        // Alert activation
+        setAlertOn(true);
         setLoaderOn(false);
       });
   };
@@ -129,15 +122,6 @@ function Login() {
           </span>
         </form>
       </div>
-      {alertOn && (
-        <Alert
-          setAlertOn={setAlertOn}
-          text={alertConfig.text}
-          type={alertConfig.type}
-          dep={alertConfig.dep}
-          effect={alertConfig.effect}
-        />
-      )}
       {loaderOn && <Loader />}
     </>
   );
