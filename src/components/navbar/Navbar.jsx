@@ -37,6 +37,9 @@ function Navbar() {
         <NavLink to="/palpite" className="regrasepalpites">
           Palpites
         </NavLink>
+        <NavLink to="/ranking" className="regrasepalpites">
+          Ranking
+        </NavLink>
         <NavLink
           to="/login"
           className={() => (username ? "login none" : "login")}

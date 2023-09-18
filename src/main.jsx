@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Regras from "./routes/regras/Regras.jsx";
 import Palpite from "./routes/palpite/Palpite.jsx";
 import Login from "./routes/login/Login.jsx";
+import Ranking from "./routes/ranking/Ranking.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/ranking",
+        element: <Ranking />,
       },
     ],
   },
