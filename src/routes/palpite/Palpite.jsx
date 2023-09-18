@@ -48,7 +48,7 @@ function Palpite() {
 
   const handleEdit = () => {
     const nowUnix = Math.round(Date.now() / 1000);
-    const firstMatch = 1695078000;
+    const firstMatch = 1695070800;
     if (nowUnix > firstMatch) {
       setAlertConfig({
         ...alertConfig,
