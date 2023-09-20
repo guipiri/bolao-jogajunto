@@ -40,8 +40,10 @@ function RankingTable({ tableInfo }) {
                       src={triangle}
                       alt="triangle-azul"
                     />
-                    Palpite feito em: 17/09/2023 10:00. O momento da aposta
-                    (Data/hora) é um dos critérios de desempate.
+                    {`Palpite feito em: ${new Date(
+                      row.date * 1000
+                    ).toLocaleString()}. O momento da aposta
+                    (Data/hora) é um dos critérios de desempate.`}
                   </div>
                 </div>
               </td>
