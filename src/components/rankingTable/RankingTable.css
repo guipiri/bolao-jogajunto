@@ -81,7 +81,7 @@ table tr td:last-child {
 
 .tooltip {
   position: absolute;
-  left: -11rem ;
+  left: -11rem;
   top: 3.2rem;
   width: 13rem;
   font-size: .65rem;

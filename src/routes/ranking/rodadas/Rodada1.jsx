@@ -8,7 +8,7 @@ function Rodada1() {
 
   return (
     <>
-      <RankingPodium />
+      <RankingPodium rankingInfo={rodada1} />
       <RankingTable tableInfo={rodada1} />
     </>
   );
