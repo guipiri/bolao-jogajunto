@@ -9,7 +9,7 @@
   width: 100%;
   padding: 1rem 1rem 5rem 1rem;
   margin: 1rem 0;
-  box-shadow: 0 1px 4px #66666682;
+  box-shadow: 0px 1px 4px 0px rgba(102, 102, 102, 0.80);
 }
 
 .logoBolao {
@@ -26,7 +26,6 @@
 .menuRanking .active {
   color: white;
   background-color: #1568F6;
-  border-color: #1568F6;
 }
 
 .rodadas {
@@ -45,4 +44,17 @@
   background-color: #1568F6;
   color: #fff;
   transition: .2s;
+}
+
+.championshipName {
+  color: #666;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.championshipName img {
+  padding-right: .5rem;
 }

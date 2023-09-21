@@ -32,6 +32,7 @@
   box-shadow: 3.32143px 3.32143px 6.64286px 0px #B4C1D5, -3.32143px -3.32143px 6.64286px 0px #FFF;
   margin-top: 1rem;
   font-size: 1rem;
+  color: #002151;
 }
 
 .firstPlace {
@@ -52,11 +53,9 @@
   box-shadow: 5px 10px 10px 0px #B4C1D5, -12.69928px -12.69928px 25.39856px 0px #FFF;
   background-color: #f5f5f5;
   border-radius: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   font-weight: bold;
   padding: 0 .5rem .5rem .5rem;
+  color: #002151;  
 }
 
 .podium h2 {
@@ -64,6 +63,7 @@
   text-align: center;
   border-bottom: 2px solid #1567f6b7;
   margin: 3rem 0 2rem;
+  padding-bottom: .5rem;
 }
 
 .firstPlace h2 {
@@ -89,11 +89,11 @@
 
 .podium .tooltip {
   top: 2rem;
-  left: -10rem;
+  left: -6rem;
 }
 
 .podium .triangle {
-  right: 1.85rem;
+  right: 6.85rem;
 }
 
 

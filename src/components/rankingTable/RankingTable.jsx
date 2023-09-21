@@ -54,7 +54,10 @@ function RankingTable({ tableInfo, podiumVisible }) {
             }
           } else {
             return (
-              <tr key={`id${row.position}`} className={index<3?`lugar${row.position}`:""}>
+              <tr
+                key={`id${row.position}`}
+                className={index < 3 ? `lugar${row.position}` : ""}
+              >
                 <td>
                   <div className="trofeuDiv">
                     <img src={trofeu} alt="" /> {row.position}
