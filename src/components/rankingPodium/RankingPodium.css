@@ -1,33 +1,9 @@
 .rankingPodium {
   width: 100%;
+  margin-top: 2rem;
   display: flex;
   position: relative;
   height: 17rem;
-}
-
-.trofeus {
-  display: flex;
-  margin-top: 3rem;
-  justify-content: space-between;
-  width: 40rem;
-  align-items: flex-end;
-}
-
-.first {
-  margin-bottom: 2rem;
-}
-
-.second {
-  margin-bottom: 1rem;
-}
-
-.trofeus h2 {
-  padding: .5rem 1rem;
-  background-color: #f5f5f5;
-  border-radius: 2rem;
-  box-shadow: 3.32143px 3.32143px 6.64286px 0px #B4C1D5, -3.32143px -3.32143px 6.64286px 0px #FFF;
-  margin-top: 1rem;
-  /* font-weight: 400; */
 }
 
 .firstPlace {
@@ -51,7 +27,7 @@
 
 .podium {
   box-shadow: 12.69928px 12.69928px 25.39856px 0px #B4C1D5, -12.69928px -12.69928px 25.39856px 0px #FFF;
-  background-color: #f5f5f5;
+  background-color: #fff;
   position: absolute;
   border-radius: 1rem;
   display: flex;
@@ -83,18 +59,7 @@
   color: #8EB4F5;
 }
 
-.podium .infoIconImg {
-  margin: 1.5rem 0 0 0;
-  position: relative;
+.podium img {
+  align-self: center;
+  margin-top: 1.5rem;
 }
-
-.podium .tooltip {
-  top: 2rem;
-  left: -10rem;
-}
-
-.podium .triangle {
-  right: 1.85rem;
-}
-
-
