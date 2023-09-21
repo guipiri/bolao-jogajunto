@@ -1,20 +1,27 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
+import { AffiliateIdContext } from "../../context/AffiliateIdContext";
 
 function Navbar() {
-  const { user } = useContext(UserContext);
+  const { user, handleLogout } = useContext(UserContext);
+  const affiliateId = useContext(AffiliateIdContext);
+
   let username;
   if (user) {
-    let { username } = user;
+    username = user.username;
   }
-  console.log(username);
 
   return (
     <nav className="navbar">
       <div id="navbarup" className="flex-center">
+        <span className={username ? "bemvindo" : "none"}>Olá, {username}!</span>
         <div id="navbarlogo" className="flex-center">
-          <a href="https://jogajunto.net">
+          <a
+            href={`https://www.jogajunto.net/register${affiliateId}`}
+            target="_blank"
+          >
             <img
               id="logo"
               alt="logo"
@@ -24,9 +31,21 @@ function Navbar() {
         </div>
       </div>
       <div className="flex-center navbarlinks">
-          <NavLink to="/regras">Regras</NavLink>
-          <NavLink to="/palpite">Palpites</NavLink>
-          <button>Entrar</button>
+        <NavLink to="/" className="regrasepalpites">
+          Como Jogar
+        </NavLink>
+        <NavLink to="/palpite" className="regrasepalpites">
+          Palpites
+        </NavLink>
+        <NavLink
+          to="/login"
+          className={() => (username ? "login none" : "login")}
+        >
+          Entrar
+        </NavLink>
+        <button onClick={handleLogout} className={username ? "login" : "none"}>
+          Sair
+        </button>
       </div>
     </nav>
   );

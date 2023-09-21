@@ -1,6 +1,6 @@
 .navbar {
   height: 110px;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
 }
@@ -36,9 +36,8 @@
 }
 
 .regrasepalpites:hover {
-  color: #fff;
   transition: 0.1s;
-  border-bottom: 3px solid #f3e84e;
+  color: #F3E84E;
 }
 
 .login {
@@ -52,6 +51,8 @@
   right: 0;
   margin-right: 1rem;
   font-size: .9rem;
+  width: 5rem;
+  text-align: center;
 }
 
 .login:hover {
@@ -71,6 +72,28 @@
 }
 
 .active {
+  color: #F3E84E;
+}
+
+.bemvindo {
   color: #fff;
-  border-bottom: 3px solid #f3e84e;
+  font-size: 0.8rem;
+  position: absolute;
+  left: 0;
+  width: min-content;
+  margin-left: 1rem;
+}
+
+@media (max-width: 450px) {
+  .login {
+    position:inherit ;
+  }
+
+  .navbarlinks {
+    justify-content: space-around;
+  }
+}
+
+.none {
+  display: none;
 }
