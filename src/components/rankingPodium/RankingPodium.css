@@ -6,12 +6,16 @@
   justify-content: center;
   padding-right: 2rem;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2rem;
 }
 
 .trofeus {
   display: flex;
   margin-top: 3rem;
   justify-content: space-between;
+  width: 100%;
   width: 100%;
   align-items: flex-end;
   padding: 0 2rem 0 1rem;
