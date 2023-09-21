@@ -1,4 +1,4 @@
-table {
+.tableRanking {
   margin-top: 2rem;
   width: 100%;
   text-align: center;
@@ -7,7 +7,7 @@ table {
 }
 
 @media screen and (max-width: 600px) {
-  table {
+  .tableRanking {
     font-size: .8rem;
   }
 
@@ -19,45 +19,45 @@ table {
     margin-right: .5rem !important;
   }
 
-  table tbody th:last-child {
+  .tableRanking tbody th:last-child {
     width: 5%;
   }
 }
 
-table th {
+.tableRanking th {
   width: 30%;
   color: #666666;
 }
 
-table tbody th:first-child {
+.tableRanking tbody th:first-child {
   width: 10%;
   color: #666666;
   text-align: left;
 }
 
-table tr {
+.tableRanking tr {
   background-color: #F5F5F5;
   height: 4rem;
   box-shadow: 0px 1px 4px rgba(102, 102, 102, 0.552);
   border-radius: 1rem;
 }
 
-table tbody tr:first-child {
+.tableRanking tbody tr:first-child {
   background-color:#fff;
   box-shadow: none;
   height: 3rem;
 }
 
-table tr td {
+.tableRanking tr td {
   color: #002151;
   font-weight: bold;
 }
 
-table tr td:first-child {
+.tableRanking tr td:first-child {
   border-radius: 1rem 0 0 1rem;
 }
 
-table tr td:last-child {
+.tableRanking tr td:last-child {
   border-radius: 0 1rem 1rem 0;
 }
 
@@ -102,4 +102,14 @@ table tr td:last-child {
   position: absolute;
   top:-.7rem;
   right: .8rem;
+}
+
+.lugar1º {
+  background-color: #F3E84E !important;
+}
+.lugar2º {
+  background-color:#D5D5D5 !important;
+}
+.lugar3º {
+  background-color: #DAA87D !important;
 }

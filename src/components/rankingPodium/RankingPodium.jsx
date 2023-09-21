@@ -6,7 +6,7 @@ import trofeuOuro from "../../assets/trofeu-ouro.png";
 import trofeuBronze from "../../assets/trofeu-bronze.png";
 import triangle from "../../assets/triangle.png";
 
-function RankingPodium({ rankingInfo }) {
+function RankingPodium({ rankingInfo, podiumVisible }) {
   return (
     <>
       <div className="trofeus">
