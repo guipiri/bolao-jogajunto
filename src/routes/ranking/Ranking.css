@@ -19,8 +19,7 @@
 .menuRanking {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  align-self: baseline;
 }
 
 .menuRanking .active {

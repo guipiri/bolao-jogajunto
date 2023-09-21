@@ -1,8 +1,9 @@
 import React from "react";
+import trofeu from "../../../assets/trofeu.svg";
 import RankingTable from "../../../components/rankingTable/RankingTable";
 
-function Rodada2() {
+function Rodada3() {
   return <RankingTable />;
 }
 
-export default Rodada2;
+export default Rodada3;
