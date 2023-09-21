@@ -7,9 +7,6 @@ import Regras from "./routes/regras/Regras.jsx";
 import Palpite from "./routes/palpite/Palpite.jsx";
 import Login from "./routes/login/Login.jsx";
 import Ranking from "./routes/ranking/Ranking.jsx";
-import Rodada1 from "./routes/ranking/rodadas/Rodada1.jsx";
-import Rodada2 from "./routes/ranking/rodadas/Rodada2.jsx";
-import Rodada3 from "./routes/ranking/rodadas/Rodada3.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,20 +28,6 @@ const router = createBrowserRouter([
       {
         path: "/ranking",
         element: <Ranking />,
-        children: [
-          {
-            path: "/ranking/1",
-            element: <Rodada1 />,
-          },
-          {
-            path: "/ranking/2",
-            element: <Rodada2 />,
-          },
-          {
-            path: "/ranking/3",
-            element: <Rodada3 />,
-          },
-        ],
       },
     ],
   },
