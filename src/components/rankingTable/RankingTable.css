@@ -1,4 +1,4 @@
-.tableRanking {
+table {
   margin-top: 2rem;
   width: 100%;
   text-align: center;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .tableRanking {
+  table {
     font-size: .8rem;
   }
 
@@ -19,45 +19,45 @@
     margin-right: .5rem !important;
   }
 
-  .tableRanking tbody th:last-child {
+  table tbody th:last-child {
     width: 5%;
   }
 }
 
-.tableRanking th {
+table th {
   width: 30%;
   color: #666666;
 }
 
-.tableRanking tbody th:first-child {
+table tbody th:first-child {
   width: 10%;
   color: #666666;
   text-align: left;
 }
 
-.tableRanking tr {
+table tr {
   background-color: #F5F5F5;
   height: 4rem;
   box-shadow: 0px 1px 4px rgba(102, 102, 102, 0.552);
   border-radius: 1rem;
 }
 
-.tableRanking tbody tr:first-child {
+table tbody tr:first-child {
   background-color:#fff;
   box-shadow: none;
   height: 3rem;
 }
 
-.tableRanking tr td {
+table tr td {
   color: #002151;
   font-weight: bold;
 }
 
-.tableRanking tr td:first-child {
+table tr td:first-child {
   border-radius: 1rem 0 0 1rem;
 }
 
-.tableRanking tr td:last-child {
+table tr td:last-child {
   border-radius: 0 1rem 1rem 0;
 }
 
@@ -102,14 +102,4 @@
   position: absolute;
   top:-.7rem;
   right: .8rem;
-}
-
-.lugar1º {
-  background-color: #F3E84E !important;
-}
-.lugar2º {
-  background-color:#D5D5D5 !important;
-}
-.lugar3º {
-  background-color: #DAA87D !important;
 }
