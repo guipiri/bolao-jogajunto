@@ -15,7 +15,7 @@ function Ranking() {
               <NavLink
                 key={`rodadasLink${index}`}
                 className="rodadas"
-                to={`/ranking/${index + 1}`}
+                to={`/ranking`}
               >
                 {`${index + 1}ª Rodada`}
               </NavLink>

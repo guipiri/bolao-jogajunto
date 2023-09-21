@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         element: <Ranking />,
         children: [
           {
-            path: "/ranking/1",
+            path: "/ranking",
             element: <Rodada1 />,
           },
           {
