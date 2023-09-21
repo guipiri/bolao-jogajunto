@@ -40,7 +40,6 @@
 
 .rodadas:hover {
   cursor: pointer;
-  border-color: #1568F6;
   background-color: #1568F6;
   color: #fff;
   transition: .2s;
