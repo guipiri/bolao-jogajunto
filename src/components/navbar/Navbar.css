@@ -32,8 +32,9 @@
 }
 
 .regrasepalpites {
-  margin: 0 1rem;
   padding-bottom: 0.2rem;
+  width: 7rem;
+  text-align: center;
 }
 
 .regrasepalpites:hover {
@@ -50,9 +51,10 @@
   border-radius: 0.25rem;
   position: absolute;
   right: 0;
-  margin-right: 1rem;
+  top: 0.8125rem;
+  margin-right: .8125rem;
   font-size: .9rem;
-  width: 5rem;
+  width: 4rem;
   text-align: center;
 }
 
@@ -82,16 +84,14 @@
   position: absolute;
   left: 0;
   width: min-content;
-  margin-left: 1rem;
+  margin-left: .8125rem;
 }
 
 @media (max-width: 450px) {
-  .login {
-    position:inherit ;
-  }
 
   .navbarlinks {
     justify-content: space-around;
+    font-size: .9rem;
   }
 }
 
