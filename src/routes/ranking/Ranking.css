@@ -57,3 +57,12 @@
 .championshipName img {
   padding-right: .5rem;
 }
+
+@media (max-width:600px) {
+  .championshipName {
+    font-size: .75rem;
+  }
+  .championshipName img {
+    width: 30px;
+  }  
+}
