@@ -3,7 +3,6 @@ import "./Palpite.css";
 import Placar from "../../components/placar/Placar";
 import { UserContext } from "../../context/UserContext";
 import Loader from "../../components/loader/Loader";
-import Alert from "../../components/alert/Alert";
 import logoBolao from "../../assets/bolao-palpite-header.png";
 import campeonato from "../../assets/campeonato.png";
 import oldFtdUsers from "../../supportFunctions/oldFtdUsers";
