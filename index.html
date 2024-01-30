@@ -31,31 +31,6 @@
       style="display: none; visibility: hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
-  <script>
-    function initFreshChat() {
-      window.fcWidget.init({
-        token: "a38a3a02-173c-4e00-a195-3b540c86c850",
-        host: "https://jogajunto-help.freshchat.com",
-        widgetUuid: "3014ca9f-5b8b-45ab-976f-9481a837defd",
-      });
-    }
-    function initialize(i, t) {
-      var e;
-      i.getElementById(t)
-        ? initFreshChat()
-        : (((e = i.createElement("script")).id = t),
-          (e.async = !0),
-          (e.src = "https://jogajunto-help.freshchat.com/js/widget.js"),
-          (e.onload = initFreshChat),
-          i.head.appendChild(e));
-    }
-    function initiateCall() {
-      initialize(document, "Freshchat-js-sdk");
-    }
-    window.addEventListener
-      ? window.addEventListener("load", initiateCall, !1)
-      : window.attachEvent("load", initiateCall, !1);
-  </script>
   <script src="https://jogajunto-help.freshchat.com/js/widget.js"></script>
   <script>
     window.fcWidget.init({
@@ -64,8 +39,8 @@
       config: {
         headerProperty: {
           //If you have multiple sites you can use the appName and appLogo to overwrite the values.
-          appName: 'Gadget God',
-          appLogo: 'https://d1qb2nb5cznatu.cloudfront.net/startups/i/2473-2c38490d8e4c91660d86ff54ba5391ea-medium_jpg.jpg?buster=1518574527',
+          appName: 'Ben 2.0',
+          appLogo: 'https://cdn.freshbots.ai/assets/share/bot-icon/cc9577e73a7357b810d44c87a216949f148604[…]3c0df32d6ee8f1247f59e56488fdc5b51578e/bot-icon.png?version=2'
         },
         content: {
           placeholders: {
